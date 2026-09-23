@@ -49,8 +49,12 @@ body {
     font-weight: 400;
 }
 
-section {
+#uno {
     height: 100vh;
+}
+
+#cinque {
+    height: fit-content;
 }
 
 h1,
@@ -79,7 +83,7 @@ h2 {
 
 .bodyTicket h3 {
     font-weight: bold;
-    font-size: 56px;
+    font-size: 48px;
     line-height: 100%;
 }
 
@@ -404,7 +408,8 @@ p.contentNews {
     line-height: 130%;
 }
 
-#contenitoreEvents,#contenitoreArtisti {
+#contenitoreEvents,
+#contenitoreArtisti {
     height: fit-content;
 }
 
@@ -443,6 +448,12 @@ p.contentNews {
     border: 2px solid var(--nero);
     border-top: none;
 }
+
+.bordoArtistiDx,
+.bordoArtistiSx {
+    border-bottom: none;
+}
+
 
 #contenitoreTickets {
     width: calc(100% - 80px);
@@ -506,12 +517,118 @@ div#appendTickets {
     width: 100%;
 }
 
-/* sezione about */
+/* sezione artisti */
 #cinque>div:first-child div {
     border-top: none;
 }
 
-#mainArtisti{
+#mainArtisti {
     width: calc(100% - 80px);
     margin: 0 auto;
+}
+
+#mainArtisti>div>div:first-of-type img {
+    border-right: 2px solid var(--nero);
+}
+
+.fasciaCardArtisti {
+    background-color: var(--rosso);
+    align-items: center;
+    padding: 20px;
+    border-top: 2px solid var(--nero);
+    border-right: 2px solid var(--nero);
+}
+
+.fasciaCardArtisti>div:first-of-type>p:first-of-type {
+    font-weight: bold;
+    font-size: 24px;
+    color: var(--bianco);
+}
+
+.fasciaCardArtisti>div:first-of-type>p:nth-child(2) {
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--bianco);
+}
+
+.fasciaCardArtisti>div:first-of-type {
+    gap: 8px;
+}
+
+#mainArtisti>div>div img.artista2 {
+    border-left: 2px solid var(--nero);
+}
+
+#mainArtisti>div>div img.artista3 {
+    border-left: 2px solid var(--nero);
+    border-right: none;
+}
+
+#mainArtisti>div:nth-child(2)>.fasciaCardArtisti {
+    border-left: 2px solid var(--nero);
+}
+
+#mainArtisti>div:nth-child(3)>.fasciaCardArtisti {
+    border-left: 2px solid var(--nero);
+    border-right: none;
+}
+
+/* form e newsletter */
+#sei {
+    border-top: 2px solid var(--nero);
+    border-bottom: 2px solid var(--nero);
+    padding: 96px 60px;
+}
+
+form p{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+    padding-bottom: 32px;
+}
+
+input[type="email"]{
+    width: 100%;
+    height: 57px;
+    border: 2px solid var(--nero);
+    border-bottom: none;
+    padding-left: 40px;
+    font-family: 'Helvetica Now Display';
+    font-size: 24px;
+    font-weight: 400;
+}
+
+input::placeholder{
+    font-family: 'Helvetica Now Display';
+    font-weight: 400;
+    font-size: 24px;
+    color: #bbbbbb;
+}
+
+form button{
+    width: 100%;
+    height: 57px;
+    background-color: var(--rosso);
+}
+
+form{
+    gap: 20px;
+}
+
+button {
+    font-size: 32px;
+    font-weight: bold;
+    color: var(--bianco);
+    padding: 20px 40px;
+    border: 2px solid var(--nero);
+}
+
+button img{
+    width: 24px;
+    height: auto;
+}
+
+.divisore{
+    width: 100%;
+    height: 96px;
 }
