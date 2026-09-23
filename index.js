@@ -1,3 +1,4 @@
+//CLASSE E ISTANZE CARD LATEST NEWS
 class CardNews {
     constructor(dataTitolo, contenuto) {
         this.dataTitolo = dataTitolo
@@ -30,3 +31,51 @@ for (let card of cards) {
 let primaSlide = contenitore.querySelector('.swiper-slide')
 primaSlide.id = 'primaSlideNews'
 
+//CLASSE E ISTANZE TICKETS IN HOME
+class TicketsHome {
+    constructor(dataTitolo, nomeEvento, artisti, prezzo,img) {
+        this.dataTitolo = dataTitolo
+        this.nomeEvento = nomeEvento
+        this.artisti = artisti
+        this.prezzo = prezzo
+        this.img=img
+    }
+}
+
+let ticket1 = new TicketsHome('03.05 WORKSHOP','Visual Identity Lab','Luca Moretti / Sofia Van Dijk',25,'img/card_ticket1.webp')
+let ticket2 = new TicketsHome('03.05 TALK','Designing new Perspectives','Arthur Bellamy / Lina Kovacs / Eva Rossetti','FREE','img/card_ticket2.webp')
+let ticket3 = new TicketsHome('04.05 INSTALLATION','Sonic Territories','Aya Nakamura',10,'img/card_ticket3.webp')
+
+let tickets =[ticket1,ticket2,ticket3]
+let contenitoreT = document.querySelector('#appendTickets')
+
+for(let ticket of tickets){
+    let div = document.createElement('div')
+    div.classList.add('d-flex')
+    div.id = 'contenitoreTickets'
+    div.innerHTML=`
+     <div class="imgTicket">
+                        <img src="${ticket.img}" alt="" class="w-100">
+                    </div>
+                    <div class="Ticket">
+                        <div class="redBar d-flex justify-content-center align-items-center">
+                            <p>${ticket.dataTitolo}</p>
+                        </div>
+                        <div class="bodyTicket">
+                            <div class="d-flex flex-column justify-content-center align-items-center">
+                                <h3>${ticket.nomeEvento}</h3>
+                                <p>${ticket.artisti}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plusTicket d-flex flex-column">
+                        <div class="d-flex justify-content-center align-items-center">
+                            <p>${ticket.prezzo === 'FREE' ? 'FREE' : ticket.prezzo + ' €'}</p>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center">
+                            <img src="img/plus.svg" alt="" width="72px" height="72px">
+                        </div>
+                    </div>
+    `
+    contenitoreT.append(div)
+}
