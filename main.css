@@ -1,0 +1,444 @@
+/* ========================================
+   VARIABLES
+======================================== */
+
+:root {
+    --rosso: #FF0000;
+    --nero: #000000;
+    --bianco: #FFFFFF;
+}
+
+
+/* ========================================
+   FONTS
+======================================== */
+
+@font-face {
+    font-family: "Helvetica Now Display";
+    src: url("./fonts/HelveticaNowDisplay-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Now Display";
+    src: url("./fonts/HelveticaNowDisplay-Md.otf") format("opentype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Helvetica Now Display";
+    src: url("./fonts/HelveticaNowDisplay-Bd.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/* ========================================
+   RESET / GLOBAL
+======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Helvetica Now Display", sans-serif;
+    font-weight: 400;
+}
+
+section {
+    height: 100vh;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+
+/* ========================================
+   TYPOGRAPHY
+======================================== */
+
+h1 {
+    color: var(--rosso);
+    font-size: 80px;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--rosso);
+    font-size: 64px;
+    font-weight: 700;
+}
+
+
+/* ========================================
+   HEADER
+======================================== */
+
+.logo {
+    width: fit-content;
+    height: fit-content;
+    padding: 40px 60px;
+    background-color: var(--rosso);
+}
+
+#voci {
+    width: fit-content;
+    height: fit-content;
+    border: 2px solid var(--nero);
+}
+
+#voci ul {
+    gap: 40px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+#voci ul li:first-of-type {
+    padding-left: 60px;
+}
+
+#voci ul li:last-of-type {
+    padding-right: 60px;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+#hero {
+    height: 100vh;
+    background-image: url("img/img-home.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#button-hero {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 80px;
+
+    padding: 0 60px;
+
+    background-color: var(--rosso);
+    border: 2px solid var(--nero);
+
+    cursor: pointer;
+}
+
+#button-hero p {
+    color: var(--bianco);
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+
+/* ========================================
+   INTRO / UNO
+======================================== */
+
+#uno {
+    height: 100vh;
+
+    background-image: url("img/prima_section.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#uno .bg-body {
+    width: fit-content;
+    height: fit-content;
+
+    border: 2px solid var(--nero);
+    border-top: none;
+}
+
+#uno .bg-body:nth-of-type(1) {
+    padding: 60px 290px 60px 60px;
+}
+
+#uno .bg-body:nth-of-type(2) {
+    padding: 55px 113px;
+    border-left: 0;
+}
+
+#uno p,
+p.contentNews {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+
+/* ========================================
+   LAST NEWS / DUE
+======================================== */
+
+#due {
+    height: fit-content;
+    overflow: hidden;
+}
+
+#due .contenitoreTitolo,
+.contenitoreTitoloHeadingDue {
+    padding-top: 96px;
+    padding-bottom: 96px;
+    padding-left: 60px;
+
+    border: 2px solid var(--nero);
+}
+
+
+/* Vertical borders */
+
+.bordo,
+.bordoDestra {
+    position: absolute;
+    top: 0;
+    z-index: 5;
+
+    width: 40px;
+    height: 400px;
+
+    padding: 0;
+
+    background-color: var(--bianco);
+
+    border: 2px solid var(--nero);
+    border-top: none;
+    border-bottom: none;
+}
+
+.bordo {
+    left: 0;
+}
+
+.bordoDestra {
+    right: 0;
+}
+
+
+/* ========================================
+   SWIPER
+======================================== */
+
+.swiper-wrapper {
+    display: flex;
+}
+
+.swiper-slide {
+    min-width: 33.333337%;
+    height: 400px;
+}
+
+.cardNews {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+
+    font-size: 24px;
+}
+
+.titoloNews {
+    padding: 20px 0;
+
+    color: var(--bianco);
+    text-align: center;
+    font-weight: 500;
+
+    background-color: var(--rosso);
+
+    border-right: 2px solid var(--nero);
+    border-left: 2px solid var(--nero);
+}
+
+.contentNews {
+    flex: 1;
+
+    padding: 24px 24px 0;
+
+    border-top: 2px solid var(--nero);
+    border-right: 2px solid var(--nero);
+    border-left: 2px solid var(--nero);
+}
+
+#primaSlideNews {
+    padding-left: 40px;
+}
+
+#primaSlideNews .cardNews .titoloNews,
+#primaSlideNews .cardNews .contentNews {
+    border-left: 0;
+}
+
+
+/* ========================================
+   ABOUT / TRE
+======================================== */
+
+.contenitoreTitoloHeadingDue {
+    width: 30%;
+    background-color: var(--bianco);
+}
+
+#tre p {
+    width: fit-content;
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+#pSecTre {
+    width: 70%;
+
+    border: 2px solid var(--nero);
+    border-left: 0;
+}
+
+
+/* ========================================
+   ABOUT CARDS
+======================================== */
+
+#tre {
+    height: fit-content;
+}
+
+#contCardAbout {
+    gap: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+#cardAboutSx,
+#cardAboutDx {
+    width: calc(50% - 40px);
+    height: 400px;
+}
+
+#cardAboutSx .button-about,
+#cardAboutDx .button-about {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 80px;
+
+    padding: 0 60px;
+
+    background-color: var(--rosso);
+    border-top: 2px solid var(--nero);
+
+    cursor: pointer;
+}
+
+#cardAboutSx {
+    background-image: url('img/aboutSx.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-right: 2px solid var(--nero);
+}
+
+#cardAboutDx {
+    background-image: url('img/aboutDx.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-left: 2px solid var(--nero);
+}
+
+.button-about p {
+    color: var(--bianco);
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    line-height: 100%;
+}
+
+/* about events */
+#quattro p {
+    width: fit-content;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+#contenitoreEvents {
+    height: fit-content;
+}
+
+.bordoEventsSx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+
+    width: 40px;
+    height: 751px;
+
+    padding: 0;
+
+    background-color: var(--bianco);
+
+    border: 2px solid var(--nero);
+    border-top: none;
+    border-bottom: none;
+}
+
+.bordoEventsDx {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 5;
+
+    width: 40px;
+    height: 751px;
+
+    padding: 0;
+
+    background-color: var(--bianco);
+
+    border: 2px solid var(--nero);
+    border-top: none;
+    border-bottom: none;
+}
+
+#contenitoreTickets {
+    width: calc(100% - 80px);
+    height: auto;
+    margin: 0 auto;
+}
+
+.imgTicket {
+    width: 16%;
+    height: 251px;
+}
+
+.Ticket {
+    width: 68%;
+}
+
+.plusTicket {
+    width: 16%;
+}
+
+.redBar {
+    background-color: var(--rosso);
+    border-bottom: 2px solid var(--nero);
+}

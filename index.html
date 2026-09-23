@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Partenope - Festival art</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="main.css">
+    <script src="index.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <nav class="position-absolute top-0 start-0 w-100">
+            <div class="d-flex justify-content-between">
+
+                <div class="logo d-flex align-items-center justify-content-center">
+                    <img src="img/logo-desk.svg" alt="">
+                </div>
+
+                <div id="voci" class="bg-body">
+                    <ul class="list-unstyled d-flex m-0">
+                        <li><a href="">about</a></li>
+                        <li><a href="">events</a></li>
+                        <li><a href="">artists</a></li>
+                        <li><a href="">contact</a></li>
+                        <li><a href="">cart</a></li>
+                        <li><a href="">profile</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- HERO -->
+        <section id="hero">
+
+            <div id="button-hero" onclick="window.location.href='events.html'"
+                class="d-flex align-items-center justify-content-between">
+                <p class="m-0">Tickets</p>
+                <img src="img/arrow.svg" alt="">
+            </div>
+
+        </section>
+
+
+        <!-- INTRO -->
+        <section id="uno">
+
+            <div class="d-flex">
+
+                <div class="bg-body">
+                    <h1 class="m-0">
+                        CREATE.<br>
+                        CONNECT.<br>
+                        INSPIRE.
+                    </h1>
+                </div>
+
+                <div class="bg-body">
+                    <p class="m-0">
+                        Bringing together graphic designers, visual creators,
+                        installation artists, and innovators for a vibrant
+                        festival celebrating ideas, collaboration, and the
+                        future of creative expression.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- LAST NEWS -->
+        <section id="due">
+
+            <div class="contenitoreTitolo">
+                <h2 class="m-0">LAST NEWS</h2>
+            </div>
+
+            <div class="position-relative">
+
+                <div class="bordo"></div>
+
+                <div class="swiper mySwiper">
+
+                    <div class="swiper-wrapper">
+                        <!-- Cards generate with JavaScript -->
+                    </div>
+
+                    <div class="swiper-pagination"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section id="tre">
+
+            <div class="d-flex">
+
+                <div class="contenitoreTitoloHeadingDue">
+                    <h2 class="m-0">ABOUT</h2>
+                </div>
+
+                <div id="pSecTre" class="d-flex align-items-center justify-content-center">
+                    <p class="m-0">
+                        Discover the story behind the festival, explore its
+                        <br>
+                        creative journey, and revisit past editions through
+                        <br>
+                        images, memories, and inspiring moments from
+                        <br>
+                        our community.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="position-relative">
+
+                <div class="bordo"></div>
+
+                <div id="contCardAbout" class="d-flex justify-content-between">
+
+                    <!-- ABOUT CARD LEFT -->
+                    <div id="cardAboutSx" class="position-relative">
+
+                        <div onclick="window.location.href='about.html'"
+                            class="d-flex align-items-center justify-content-between button-about">
+                            <p class="m-0">Our history</p>
+                            <img src="img/arrow.svg" alt="">
+                        </div>
+
+                    </div>
+
+
+                    <!-- ABOUT CARD RIGHT -->
+                    <div id="cardAboutDx" class="position-relative">
+
+                        <div onclick="window.location.href='about.html'"
+                            class="d-flex align-items-center justify-content-between button-about">
+                            <p class="m-0">Gallery</p>
+                            <img src="img/arrow.svg" alt="">
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="bordoDestra"></div>
+
+            </div>
+
+        </section>
+
+        <!-- EVENTS -->
+        <section id="quattro">
+            <div class="d-flex">
+
+                <div class="contenitoreTitoloHeadingDue">
+                    <h2 class="m-0">EVENTS</h2>
+                </div>
+
+                <div id="pSecTre" class="d-flex align-items-center justify-content-center">
+                    <p class="m-0">
+                        Explore our upcoming events and discover the <br> latest creative experiences, featuring
+                        inspiring <br>
+                        talks, exhibitions, installations, and encounters <br> with visionary minds.
+                    </p>
+                </div>
+
+            </div>
+            <div id="contenitoreEvents" class="d-flex position-relative">
+                <div class="bordoEventsSx"></div>
+                <div class="d-flex" id="contenitoreTickets">
+                    <div class="imgTicket">
+                        <img src="img/card_ticket1.webp" alt="" class="w-100">
+                    </div>
+                    <div class="Ticket">
+                        <div class="redBar">
+                            <p>03.05 WORKSHOP</p>
+                        </div>
+                        <div class="bodyTicket">
+                            <div class="d-flex flex-column">
+                                <h3>Visual Identity Lab</h3>
+                                <p>Luca Moretti / Sofia Van Dijk</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="plusTicket">
+                        <div>
+                            <p>25,00€</p>
+                        </div>
+                        <div>
+                            <img src="img/plus.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="bordoEventsDx"></div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+    <footer></footer>
+
+
+    <!-- SWIPER -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiper = new Swiper('.mySwiper', {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            freeMode: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+
+</body>
+
+</html>
