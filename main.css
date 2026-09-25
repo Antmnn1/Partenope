@@ -529,6 +529,7 @@ div#appendTickets {
     padding: 20px;
     border-top: 2px solid var(--nero);
     border-right: 2px solid var(--nero);
+    flex: 1;
 }
 
 .fasciaCardArtisti>div:first-of-type>p:first-of-type {
@@ -648,8 +649,18 @@ button img {
     border-bottom: 2px solid var(--nero);
 }
 
+#heroArtists {
+    height: 100vh;
+    background-image: url("img/sfondoArtists.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 2px solid var(--nero);
+}
+
 #heroAbout>div,
-#heroEvents>div {
+#heroEvents>div,
+#heroArtists>div {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -775,4 +786,54 @@ span {
 
 span:not(.titoloFiltro) {
     cursor: pointer;
+}
+
+/* PAGINA ARTISTS */
+.unoArtisti {
+    border-bottom: 2px solid var(--nero);
+}
+
+.unoArtisti .bordoEventsSx,.unoArtisti .bordoEventsDx{
+    border-bottom: none;
+}
+
+#mainArtisti.flex-wrap {
+    gap: 20px;
+}
+
+.unoArtisti #mainArtisti>div:nth-child(2),
+.unoArtisti #mainArtisti>div:nth-child(5),
+.unoArtisti #mainArtisti>div:nth-child(8),
+.unoArtisti #mainArtisti>div:nth-child(11) {
+    border-left: 2px solid var(--nero);
+}
+
+.unoArtisti #mainArtisti>div:nth-child(3n) {
+    border-left: 2px solid var(--nero);
+}
+
+.unoArtisti #mainArtisti>div:nth-child(3) img,
+.unoArtisti #mainArtisti>div:nth-child(6) img,
+.unoArtisti #mainArtisti>div:nth-child(9) img,
+.unoArtisti #mainArtisti>div:nth-child(6) .fasciaCardArtisti,
+.unoArtisti #mainArtisti>div:nth-child(9) .fasciaCardArtisti {
+    border-right: none;
+}
+
+.unoArtisti #mainArtisti>div:nth-child(3) .fasciaCardArtisti,
+.unoArtisti #mainArtisti>div:nth-child(2) .fasciaCardArtisti {
+    border-left: none;
+}
+
+.unoArtisti #mainArtisti>div:nth-child(-n + 3) {
+    border-bottom: 2px solid var(--nero);
+}
+
+.unoArtisti #mainArtisti>div:nth-child(n + 4):nth-child(-n + 9) {
+    border-top: 2px solid var(--nero);
+    border-bottom: 2px solid var(--nero);
+}
+
+.unoArtisti #mainArtisti>div:nth-child(n + 10):nth-child(-n + 11) {
+    border-top: 2px solid var(--nero);
 }

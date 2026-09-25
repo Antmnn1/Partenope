@@ -177,3 +177,47 @@ if (contGallery) {
         contGallery.append(div)
     }
 }
+
+//CLASSE E ISTANZE CARD ARTISTI IN ARTISTS
+class CardArtisti {
+    constructor(img, nome, tipo) {
+        this.img = img
+        this.nome = nome
+        this.tipo = tipo
+    }
+}
+
+let cardartista1 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
+let cardartista2 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
+let cardartista3 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
+let cardartista4 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
+let cardartista5 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
+let cardartista6 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
+let cardartista7 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
+let cardartista8 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
+let cardartista9 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
+let cardartista10 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
+let cardartista11 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
+
+let cardsartisti = [cardartista1, cardartista2, cardartista3, cardartista4, cardartista5, cardartista6, cardartista7, cardartista8, cardartista9, cardartista10, cardartista11]
+let contArtisti = document.querySelector('#mainArtisti')
+
+if (contArtisti && document.querySelector('#heroArtists')) {
+    for (let card of cardsartisti) {
+        contArtisti.innerHTML += `
+        <div class="d-flex flex-column">
+                            <div>
+                                <img src="${card.img}" alt="" class="w-100">
+                            </div>
+                            <div class="d-flex justify-content-between fasciaCardArtisti">
+                                <div class="d-flex flex-column">
+                                    <p>${card.nome}</p>
+                                    <p>${card.tipo}</p>
+                                </div>
+                                <div><img src="img/arrow.svg" alt=""></div>
+                            </div>
+                        </div>
+        `
+    }
+}
+
