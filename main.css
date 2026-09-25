@@ -1,6 +1,4 @@
-/* ========================================
-   VARIABLES
-======================================== */
+/* variabili */
 
 :root {
     --rosso: #FF0000;
@@ -9,9 +7,7 @@
 }
 
 
-/* ========================================
-   FONTS
-======================================== */
+/* fonts */
 
 @font-face {
     font-family: "Helvetica Now Display";
@@ -35,9 +31,7 @@
 }
 
 
-/* ========================================
-   RESET / GLOBAL
-======================================== */
+/* reset e globale */
 
 * {
     box-sizing: border-box;
@@ -64,10 +58,12 @@ p {
     margin: 0;
 }
 
+.logo {
+    cursor: pointer;
+}
 
-/* ========================================
-   TYPOGRAPHY
-======================================== */
+
+/* tipografia */
 
 h1 {
     color: var(--rosso);
@@ -83,7 +79,7 @@ h2 {
 
 .bodyTicket h3 {
     font-weight: bold;
-    font-size: 48px;
+    font-size: 56px;
     line-height: 100%;
 }
 
@@ -101,9 +97,7 @@ h2 {
     color: var(--bianco);
 }
 
-/* ========================================
-   HEADER
-======================================== */
+/* header */
 
 .logo {
     width: fit-content;
@@ -133,9 +127,9 @@ h2 {
 }
 
 
-/* ========================================
-   HERO
-======================================== */
+/* INIZIO PAGINA HOME */
+
+/* hero */
 
 #hero {
     height: 100vh;
@@ -169,9 +163,7 @@ h2 {
 }
 
 
-/* ========================================
-   INTRO / UNO
-======================================== */
+/* news */
 
 #uno {
     height: 100vh;
@@ -200,16 +192,12 @@ h2 {
 }
 
 #uno p,
-p.contentNews {
+p.contentNews,
+.contenitoreInfoAbout p {
     font-size: 24px;
     font-weight: 400;
     line-height: 130%;
 }
-
-
-/* ========================================
-   LAST NEWS / DUE
-======================================== */
 
 #due {
     height: fit-content;
@@ -226,7 +214,7 @@ p.contentNews {
 }
 
 
-/* Vertical borders */
+/* bordi */
 
 .bordo,
 .bordoDestra {
@@ -255,12 +243,11 @@ p.contentNews {
 }
 
 
-/* ========================================
-   SWIPER
-======================================== */
+/* swiper */
 
 .swiper-wrapper {
     display: flex;
+    width: calc(100% - 60px);
 }
 
 .swiper-slide {
@@ -300,19 +287,17 @@ p.contentNews {
     border-left: 2px solid var(--nero);
 }
 
-#primaSlideNews {
-    padding-left: 40px;
-}
-
 #primaSlideNews .cardNews .titoloNews,
 #primaSlideNews .cardNews .contentNews {
     border-left: 0;
 }
 
+div#primaSlideNews {
+    padding-left: 40px;
+}
 
-/* ========================================
-   ABOUT / TRE
-======================================== */
+
+/* home about */
 
 .contenitoreTitoloHeadingDue {
     width: 30%;
@@ -335,9 +320,7 @@ p.contentNews {
 }
 
 
-/* ========================================
-   ABOUT CARDS
-======================================== */
+/* home about cards */
 
 #tre {
     height: fit-content;
@@ -396,8 +379,14 @@ p.contentNews {
 }
 
 /* about events */
+
 #quattro {
     height: fit-content;
+}
+
+div#appendTickets {
+    width: calc(100% - 80px);
+    margin: 0 auto;
 }
 
 #quattro p,
@@ -456,15 +445,14 @@ p.contentNews {
 
 
 #contenitoreTickets {
-    width: calc(100% - 80px);
-    height: auto;
-    margin: 0 auto;
+    width: 100%;
+    aspect-ratio: 5.71;
     border-bottom: 2px solid var(--nero);
 }
 
 .imgTicket {
     width: 16%;
-    height: 251px;
+    height: 100%;
 }
 
 .imgTicket img {
@@ -513,11 +501,8 @@ p.contentNews {
     border-left: 2px solid var(--nero);
 }
 
-div#appendTickets {
-    width: 100%;
-}
-
 /* sezione artisti */
+
 #cinque>div:first-child div {
     border-top: none;
 }
@@ -525,6 +510,10 @@ div#appendTickets {
 #mainArtisti {
     width: calc(100% - 80px);
     margin: 0 auto;
+}
+
+#mainArtisti>div {
+    width: calc((100% - 40px) / 3);
 }
 
 #mainArtisti>div>div:first-of-type img {
@@ -574,20 +563,21 @@ div#appendTickets {
 }
 
 /* form e newsletter */
+
 #sei {
-    border-top: 2px solid var(--nero);
-    border-bottom: 2px solid var(--nero);
+    border: 2px solid var(--nero);
     padding: 96px 60px;
+    height: fit-content;
 }
 
-form p{
+form p {
     font-size: 24px;
     font-weight: 400;
     line-height: 130%;
     padding-bottom: 32px;
 }
 
-input[type="email"]{
+input[type="email"] {
     width: 100%;
     height: 57px;
     border: 2px solid var(--nero);
@@ -598,20 +588,20 @@ input[type="email"]{
     font-weight: 400;
 }
 
-input::placeholder{
+input::placeholder {
     font-family: 'Helvetica Now Display';
     font-weight: 400;
     font-size: 24px;
     color: #bbbbbb;
 }
 
-form button{
+form button {
     width: 100%;
     height: 57px;
     background-color: var(--rosso);
 }
 
-form{
+form {
     gap: 20px;
 }
 
@@ -623,12 +613,76 @@ button {
     border: 2px solid var(--nero);
 }
 
-button img{
+button img {
     width: 24px;
     height: auto;
 }
 
-.divisore{
+.divisore {
     width: 100%;
     height: 96px;
+    border-left: 2px solid var(--nero);
+    border-right: 2px solid var(--nero);
+}
+
+/* INIZIO PAGINA ABOUT */
+
+#heroAbout {
+    height: 100vh;
+    background-image: url("img/sfondoAbout.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 2px solid var(--nero);
+}
+
+#heroAbout>div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--bianco);
+    border: 2px solid var(--nero);
+    padding: 96px 60px;
+}
+
+
+/* info */
+
+.contenitoreInfoAbout {
+    padding-right: 60px;
+    padding-left: 60px;
+    border: 2px solid var(--nero);
+}
+
+.contenitoreInfoAbout>div {
+    width: 50%;
+}
+
+.contenitoreInfoAbout>div:first-of-type {
+    width: 50%;
+}
+
+.contenitoreInfoAbout>div:nth-of-type(2) {
+    padding-top: 96px;
+    padding-bottom: 96px;
+    border-left: 2px solid var(--nero);
+}
+
+/* gallery edizioni precedenti */
+#galleryPrecedenti .contenitoreTitolo {
+    padding: 96px 0 96px 60px;
+    border-left: 2px solid var(--nero);
+    border-right: 2px solid var(--nero);
+}
+
+#galleryPrecedenti>div:nth-of-type(2) {
+    border-bottom: 2px solid var(--nero);
+}
+
+#galleryPrecedenti .bordo {
+    border-top: 2px solid var(--nero);
+}
+
+#galleryPrecedenti {
+    height: fit-content;
 }
