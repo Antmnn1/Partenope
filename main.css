@@ -639,7 +639,17 @@ button img {
     border-bottom: 2px solid var(--nero);
 }
 
-#heroAbout>div {
+#heroEvents {
+    height: 100vh;
+    background-image: url("img/sfondoEvents.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 2px solid var(--nero);
+}
+
+#heroAbout>div,
+#heroEvents>div {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -725,12 +735,44 @@ button img {
     position: relative;
 }
 
-#galleryPrecedenti img{
+#galleryPrecedenti img {
     height: 100%;
     object-fit: cover;
 }
 
-.cardGallery p{
+.cardGallery p {
     font-weight: bold;
     font-size: 32px;
+}
+
+/* PAGINA EVENTS */
+.contFiltri {
+    width: calc(100% - 80px);
+    margin: 0 auto;
+    padding: 96px;
+    border-bottom: 2px solid var(--nero);
+}
+
+.titoloFiltro {
+    font-weight: bold;
+}
+
+span {
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 1%;
+    color: var(--rosso);
+}
+
+.filtri {
+    gap: 40px;
+}
+
+.filtri>div {
+    gap: 16px;
+}
+
+span:not(.titoloFiltro) {
+    cursor: pointer;
 }

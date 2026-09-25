@@ -52,40 +52,93 @@ class TicketsHome {
 let ticket1 = new TicketsHome('03.05 WORKSHOP', 'Visual Identity Lab', 'Luca Moretti / Sofia Van Dijk', 25, 'img/card_ticket1.webp')
 let ticket2 = new TicketsHome('03.05 TALK', 'Designing new Perspectives', 'Arthur Bellamy / Lina Kovacs / Eva Rossetti', 'FREE', 'img/card_ticket2.webp')
 let ticket3 = new TicketsHome('04.05 INSTALLATION', 'Sonic Territories', 'Aya Nakamura', 10, 'img/card_ticket3.webp')
+let ticket4 = new TicketsHome('04.05 PERFORMANCE', 'Motion in Space', 'Leon Hartmann', 15, 'img/card_ticket4.webp')
+let ticket5 = new TicketsHome('05.05 TALK', 'The future of Art', 'Noah Visser', 'FREE', 'img/card_ticket5.webp')
+let ticket6 = new TicketsHome('05.05 WORKSHOP', 'Typography Lab', 'Thomas Vermeer / Sofia Van Dijk', 25, 'img/card_ticket6.webp')
+let ticket7 = new TicketsHome('06.05 PERFORMANCE', 'Deep Listening', 'Aya Nakamura', 15, 'img/card_ticket7.webp')
+let ticket8 = new TicketsHome('06.05 INSTALLATION', 'Fragments of Identity', 'Alena Rodrigo', 10, 'img/card_ticket8.webp')
+let ticket9 = new TicketsHome('07.05 WORKSHOP', 'Creative Coding', 'Leon Hartmann', 25, 'img/card_ticket9.webp')
+let ticket10 = new TicketsHome('08.05', 'Final Event', '', 'FREE', 'img/card_ticket10.webp')
 
 let tickets = [ticket1, ticket2, ticket3]
+let ticketEvents = [ticket1, ticket2, ticket3, ticket4, ticket5, ticket6, ticket7, ticket8, ticket9, ticket10]
 let contenitoreT = document.querySelector('#appendTickets')
 
-if (contenitoreT) {
+if (contenitoreT && !document.querySelector('#heroEvents')) {
 
     for (let ticket of tickets) {
         let div = document.createElement('div')
         div.classList.add('d-flex')
         div.id = 'contenitoreTickets'
+
         div.innerHTML = `
-         <div class="imgTicket">
-                            <img src="${ticket.img}" alt="" class="w-100">
-                        </div>
-                        <div class="Ticket">
-                            <div class="redBar d-flex justify-content-center align-items-center">
-                                <p>${ticket.dataTitolo}</p>
-                            </div>
-                            <div class="bodyTicket">
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <h3>${ticket.nomeEvento}</h3>
-                                    <p>${ticket.artisti}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="plusTicket d-flex flex-column">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <p>${ticket.prezzo === 'FREE' ? 'FREE' : ticket.prezzo + ' €'}</p>
-                            </div>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <img src="img/plus.svg" alt="" width="72px" height="72px">
-                            </div>
-                        </div>
+            <div class="imgTicket">
+                <img src="${ticket.img}" alt="" class="w-100">
+            </div>
+
+            <div class="Ticket">
+                <div class="redBar d-flex justify-content-center align-items-center">
+                    <p>${ticket.dataTitolo}</p>
+                </div>
+
+                <div class="bodyTicket">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <h3>${ticket.nomeEvento}</h3>
+                        <p>${ticket.artisti}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="plusTicket d-flex flex-column">
+                <div class="d-flex justify-content-center align-items-center">
+                    <p>${ticket.prezzo === 'FREE' ? 'FREE' : ticket.prezzo + ' €'}</p>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="img/plus.svg" alt="" width="72px" height="72px">
+                </div>
+            </div>
         `
+
+        contenitoreT.append(div)
+    }
+
+} else if (contenitoreT && document.querySelector('#heroEvents')) {
+
+    for (let ticket of ticketEvents) {
+        let div = document.createElement('div')
+        div.classList.add('d-flex')
+        div.id = 'contenitoreTickets'
+
+        div.innerHTML = `
+            <div class="imgTicket">
+                <img src="${ticket.img}" alt="" class="w-100">
+            </div>
+
+            <div class="Ticket">
+                <div class="redBar d-flex justify-content-center align-items-center">
+                    <p>${ticket.dataTitolo}</p>
+                </div>
+
+                <div class="bodyTicket">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <h3>${ticket.nomeEvento}</h3>
+                        <p>${ticket.artisti}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="plusTicket d-flex flex-column">
+                <div class="d-flex justify-content-center align-items-center">
+                    <p>${ticket.prezzo === 'FREE' ? 'FREE' : ticket.prezzo + ' €'}</p>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="img/plus.svg" alt="" width="72px" height="72px">
+                </div>
+            </div>
+        `
+
         contenitoreT.append(div)
     }
 }
