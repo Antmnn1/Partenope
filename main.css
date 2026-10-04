@@ -871,8 +871,7 @@ span:not(.titoloFiltro) {
 }
 
 #zonaMappa p {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding: 64px 32px;
     font-size: 24px;
 }
 
@@ -881,8 +880,13 @@ div#zonaMappa {
     border-top: 2px solid var(--nero)
 }
 
+#zonaMappa > div:first-of-type {
+    border-bottom: 2px solid var(--nero);
+}
+
 #mappa {
     width: 100%;
+    flex: 1;
 }
 
 #mappa img {
@@ -936,4 +940,28 @@ div#zonaMappa {
 .accordion-body{
     font-size: 24px;
     line-height: 130%;
+}
+
+iframe{
+    width: 100%;
+    height: 100%;
+}
+
+form input {
+    border: 2px solid var(--nero)
+}
+
+input:focus{
+    outline: none;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: transparent;
+    color: inherit;
+    box-shadow: none;
 }
