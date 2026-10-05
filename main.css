@@ -880,7 +880,7 @@ div#zonaMappa {
     border-top: 2px solid var(--nero)
 }
 
-#zonaMappa > div:first-of-type {
+#zonaMappa>div:first-of-type {
     border-bottom: 2px solid var(--nero);
 }
 
@@ -896,7 +896,8 @@ div#zonaMappa {
     border-top: 2px solid var(--nero);
 }
 
-.bordoDestraMappa {
+.bordoDestraMappa,
+.bordoDestraScheda, .bordoSinistraScheda {
     width: 40px;
     padding: 0;
     background-color: var(--bianco);
@@ -929,20 +930,21 @@ div#zonaMappa {
     border-bottom: none;
 }
 
-#contFaq, .accordion{
+#contFaq,
+.accordion {
     width: 100%;
 }
 
-.accordion-button{
+.accordion-button {
     font-size: 32px;
 }
 
-.accordion-body{
+.accordion-body {
     font-size: 24px;
     line-height: 130%;
 }
 
-iframe{
+iframe {
     width: 100%;
     height: 100%;
 }
@@ -951,7 +953,7 @@ form input {
     border: 2px solid var(--nero)
 }
 
-input:focus{
+input:focus {
     outline: none;
 }
 
@@ -964,4 +966,74 @@ input:focus{
     background-color: transparent;
     color: inherit;
     box-shadow: none;
+}
+
+/* scheda evento */
+
+#heroSchedaEvento>div {
+    border: 2px solid var(--nero);
+    padding: 96px 0 96px 60px;
+}
+
+#schedaEvento .contFiltri{
+    width: 100%;
+    padding: 40px 96px;
+    border-bottom: none;
+}
+
+#schedaEvento .bordoSinistraScheda, #schedaEvento .bordoDestraScheda{
+    border-top: none;
+}
+
+.divisore.bordoSopra{
+    border-top: 2px solid var(--nero);
+    border-left: none;
+    border-right: none;
+}
+
+.sfondoEvento{
+    background-image: url(img/sfondo1.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 940px;
+}
+
+.sfondoEvento > div:first-of-type{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60%;
+    height: 249px;
+    padding: 70px 120px;
+    background-color: var(--bianco);
+    border-top: 2px solid var(--nero);
+    border-right: 2px solid var(--nero);
+    overflow: hidden;
+}
+
+.sfondoEvento > div:first-of-type p{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+.sfondoEvento .plusTicket{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 222px;
+    height: 249px;
+    border-top: 2px solid var(--nero);
+}
+
+.seeAlso{
+    padding: 40px 60px;
+    border-top: 2px solid var(--nero);
+}
+
+.seeAlso p{
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--rosso);
 }

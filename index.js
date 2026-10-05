@@ -38,9 +38,10 @@ if (contenitore) {
 }
 
 
-//CLASSE E ISTANZE TICKETS IN HOME
+//CLASSE E ISTANZE TICKETS
 class TicketsHome {
-    constructor(dataTitolo, nomeEvento, artisti, prezzo, img) {
+    constructor(id, dataTitolo, nomeEvento, artisti, prezzo, img) {
+        this.id = id
         this.dataTitolo = dataTitolo
         this.nomeEvento = nomeEvento
         this.artisti = artisti
@@ -49,16 +50,16 @@ class TicketsHome {
     }
 }
 
-let ticket1 = new TicketsHome('03.05 WORKSHOP', 'Visual Identity Lab', 'Luca Moretti / Sofia Van Dijk', 25, 'img/card_ticket1.webp')
-let ticket2 = new TicketsHome('03.05 TALK', 'Designing new Perspectives', 'Arthur Bellamy / Lina Kovacs / Eva Rossetti', 'FREE', 'img/card_ticket2.webp')
-let ticket3 = new TicketsHome('04.05 INSTALLATION', 'Sonic Territories', 'Aya Nakamura', 10, 'img/card_ticket3.webp')
-let ticket4 = new TicketsHome('04.05 PERFORMANCE', 'Motion in Space', 'Leon Hartmann', 15, 'img/card_ticket4.webp')
-let ticket5 = new TicketsHome('05.05 TALK', 'The future of Art', 'Noah Visser', 'FREE', 'img/card_ticket5.webp')
-let ticket6 = new TicketsHome('05.05 WORKSHOP', 'Typography Lab', 'Thomas Vermeer / Sofia Van Dijk', 25, 'img/card_ticket6.webp')
-let ticket7 = new TicketsHome('06.05 PERFORMANCE', 'Deep Listening', 'Aya Nakamura', 15, 'img/card_ticket7.webp')
-let ticket8 = new TicketsHome('06.05 INSTALLATION', 'Fragments of Identity', 'Alena Rodrigo', 10, 'img/card_ticket8.webp')
-let ticket9 = new TicketsHome('07.05 WORKSHOP', 'Creative Coding', 'Leon Hartmann', 25, 'img/card_ticket9.webp')
-let ticket10 = new TicketsHome('08.05', 'Final Event', '', 'FREE', 'img/card_ticket10.webp')
+let ticket1 = new TicketsHome(1, '03.05 WORKSHOP', 'Visual Identity Lab', 'Luca Moretti / Sofia Van Dijk', 25, 'img/card_ticket1.webp')
+let ticket2 = new TicketsHome(2, '03.05 TALK', 'Designing new Perspectives', 'Arthur Bellamy / Lina Kovacs / Eva Rossetti', 'FREE', 'img/card_ticket2.webp')
+let ticket3 = new TicketsHome(3, '04.05 INSTALLATION', 'Sonic Territories', 'Aya Nakamura', 10, 'img/card_ticket3.webp')
+let ticket4 = new TicketsHome(4, '04.05 PERFORMANCE', 'Motion in Space', 'Leon Hartmann', 15, 'img/card_ticket4.webp')
+let ticket5 = new TicketsHome(5, '05.05 TALK', 'The future of Art', 'Noah Visser', 'FREE', 'img/card_ticket5.webp')
+let ticket6 = new TicketsHome(6, '05.05 WORKSHOP', 'Typography Lab', 'Thomas Vermeer / Sofia Van Dijk', 25, 'img/card_ticket6.webp')
+let ticket7 = new TicketsHome(7, '06.05 PERFORMANCE', 'Deep Listening', 'Aya Nakamura', 15, 'img/card_ticket7.webp')
+let ticket8 = new TicketsHome(8, '06.05 INSTALLATION', 'Fragments of Identity', 'Alena Rodrigo', 10, 'img/card_ticket8.webp')
+let ticket9 = new TicketsHome(9, '07.05 WORKSHOP', 'Creative Coding', 'Leon Hartmann', 25, 'img/card_ticket9.webp')
+let ticket10 = new TicketsHome(10, '08.05', 'Final Event', '', 'FREE', 'img/card_ticket10.webp')
 
 let tickets = [ticket1, ticket2, ticket3]
 let ticketEvents = [ticket1, ticket2, ticket3, ticket4, ticket5, ticket6, ticket7, ticket8, ticket9, ticket10]
@@ -70,6 +71,11 @@ if (contenitoreT && !document.querySelector('#heroEvents')) {
         let div = document.createElement('div')
         div.classList.add('d-flex')
         div.id = 'contenitoreTickets'
+        div.dataset.eventId = ticket.id
+
+        div.addEventListener('click', () => {
+            window.location.href = `event.html?id=${ticket.id}`
+        })
 
         div.innerHTML = `
             <div class="imgTicket">
