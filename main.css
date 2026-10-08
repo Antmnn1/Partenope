@@ -992,7 +992,7 @@ input:focus {
 }
 
 .sfondoEvento{
-    background-image: url(img/sfondo1.webp);
+    background-image: url(img/imgEvento1.webp);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1036,4 +1036,13 @@ input:focus {
     font-size: 24px;
     font-weight: 400;
     color: var(--rosso);
+}
+
+#contenitoreTickets{
+    cursor: pointer;
+}
+
+.contenitoreTicketsSeeAlso{
+    border-top: 2px solid var(--nero);
+    cursor: pointer;
 }

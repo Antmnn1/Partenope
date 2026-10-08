@@ -62,16 +62,15 @@
                         <div class="filtri d-flex">
                             <div class="d-flex">
                                 <span class="titoloFiltro">Data e ora:</span>
-                                <span class="">03/05 at 10:00 AM</span>
+                                <span id="eventDateTime"></span>
                             </div>
                             <div class="d-flex">
                                 <span class="titoloFiltro">Artists:</span>
-                                <span class="">Luca Moretti</span>
-                                <span class="">Sofia Van Dijk</span>
+                                <span id="artista"></span>
                             </div>
                             <div class="d-flex">
                                 <span class="titoloFiltro">Category:</span>
-                                <span class="">Workshop</span>
+                                <span id="cat"></span>
                             </div>
                         </div>
                     </div>
@@ -84,7 +83,7 @@
                         </div>
                         <div class="plusTicket d-flex flex-column">
                             <div class="d-flex justify-content-center align-items-center">
-                                <p>25€</p>
+                                <p id="prezzo"></p>
                             </div>
 
                             <div class="d-flex align-items-center justify-content-center bg-body">
@@ -95,61 +94,8 @@
                     <div class="seeAlso">
                         <p>See also</p>
                     </div>
-                    <div class="contenitoreTickets d-flex">
-                        <div class="imgTicket">
-                            <img src="${ticket.img}" alt="" class="w-100">
-                        </div>
-
-                        <div class="Ticket">
-                            <div class="redBar d-flex justify-content-center align-items-center">
-                                <p>${ticket.dataTitolo}</p>
-                            </div>
-
-                            <div class="bodyTicket">
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <h3>${ticket.nomeEvento}</h3>
-                                    <p>${ticket.artisti}</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="plusTicket d-flex flex-column">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <p>${ticket.prezzo === 'FREE' ? 'FREE' : ticket.prezzo + ' €'}</p>
-                            </div>
-
-                            <div class="d-flex align-items-center justify-content-center">
-                                <img src="img/plus.svg" alt="" width="72px" height="72px">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contenitoreTickets d-flex">
-                        <div class="imgTicket">
-                            <img src="${ticket.img}" alt="" class="w-100">
-                        </div>
-
-                        <div class="Ticket">
-                            <div class="redBar d-flex justify-content-center align-items-center">
-                                <p>${ticket.dataTitolo}</p>
-                            </div>
-
-                            <div class="bodyTicket">
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <h3>${ticket.nomeEvento}</h3>
-                                    <p>${ticket.artisti}</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="plusTicket d-flex flex-column">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <p>${ticket.prezzo === 'FREE' ? 'FREE' : ticket.prezzo + ' €'}</p>
-                            </div>
-
-                            <div class="d-flex align-items-center justify-content-center">
-                                <img src="img/plus.svg" alt="" width="72px" height="72px">
-                            </div>
-                        </div>
+                    <div id="seeAlsoTickets">
+                        <!--  -->
                     </div>
                 </div>
                 <div class="bordoDestraScheda"></div>
