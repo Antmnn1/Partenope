@@ -120,7 +120,7 @@ if (contenitoreT && !document.querySelector('#heroEvents')) {
         div.dataset.eventId = ticket.id
 
         div.addEventListener('click', () => {
-            window.location.href = `event.html?id=${ticket.id}`
+            window.location.href = `schedaevent.html?id=${ticket.id}`
         })
 
         div.innerHTML = `

@@ -1056,3 +1056,26 @@ input:focus {
     border-top: 2px solid var(--nero);
     cursor: pointer;
 }
+
+/* scheda artista */
+.contImgArtist{
+    max-width: 464px;
+    height: auto;
+}
+
+#schedaArtist .contFiltri{
+    border-bottom: none;
+    margin: 0;
+}
+
+#schedaArtist .divisore.bordoSopra{
+    border-bottom: 2px solid var(--nero);
+}
+
+#schedaArtist button{
+    border-top: none;
+}
+
+.contImgArtist img{
+    border-right: 2px solid var(--nero);
+}
