@@ -609,10 +609,10 @@ input::placeholder {
     color: #bbbbbb;
 }
 
-form button {
-    width: 100%;
-    height: 57px;
+form button, .contInfoArtist button {
+    width: 100%;;
     background-color: var(--rosso);
+    line-height: 100%;
 }
 
 form {
@@ -1066,6 +1066,12 @@ input:focus {
 #schedaArtist .contFiltri{
     border-bottom: none;
     margin: 0;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#schedaArtist .bordoSinistraScheda, #schedaArtist .bordoDestraScheda{
+    border-top: none;
 }
 
 #schedaArtist .divisore.bordoSopra{
@@ -1074,8 +1080,42 @@ input:focus {
 
 #schedaArtist button{
     border-top: none;
+    border-right: none;
+}
+
+.contImgArtist{
+    width: 30%;
+    height: 100%;
+}
+
+.contInfoArtist{
+    flex: 1;
 }
 
 .contImgArtist img{
     border-right: 2px solid var(--nero);
+    object-fit: cover;
+    height: 100%;
+}
+
+.contInfoArtist .btnPortfolio{
+    background-color: var(--bianco);
+    color: var(--nero);
+}
+
+.contInfoArtist p{
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 130%;
+}
+
+.contP{
+    width: calc(100% - 80px);
+    margin: 0 auto;
+    height: calc(100% - 80px);
+    padding: 40px;
+}
+
+.btnBiography {
+    border-left: none;
 }
