@@ -52,16 +52,16 @@ class TicketsHome {
     }
 }
 
-let ticket1 = new TicketsHome(1, '03.05 WORKSHOP','10:00', 'Visual Identity Lab', 'Luca Moretti / Sofia Van Dijk', 25, 'img/card_ticket1.webp', 'img/imgEvento1.webp')
-let ticket2 = new TicketsHome(2, '03.05 TALK', '15:00','Designing new Perspectives', 'Arthur Bellamy / Lina Kovacs / Eva Rossetti', 'FREE', 'img/card_ticket2.webp','img/imgEvento2.webp')
-let ticket3 = new TicketsHome(3, '04.05 INSTALLATION','10:00', 'Sonic Territories', 'Aya Nakamura', 10, 'img/card_ticket3.webp','img/imgEvento3.webp')
-let ticket4 = new TicketsHome(4, '04.05 PERFORMANCE', '15:00','Motion in Space', 'Leon Hartmann', 15, 'img/card_ticket4.webp','img/imgEvento4.webp')
-let ticket5 = new TicketsHome(5, '05.05 TALK', '10:00','The future of Art', 'Noah Visser', 'FREE', 'img/card_ticket5.webp','img/imgEvento5.webp')
-let ticket6 = new TicketsHome(6, '05.05 WORKSHOP', '15:00','Typography Lab', 'Thomas Vermeer / Sofia Van Dijk', 25, 'img/card_ticket6.webp','img/imgEvento6.webp')
-let ticket7 = new TicketsHome(7, '06.05 PERFORMANCE','10:00', 'Deep Listening', 'Aya Nakamura', 15, 'img/card_ticket7.webp','img/imgEvento7.webp')
-let ticket8 = new TicketsHome(8, '06.05 INSTALLATION', '15:00','Fragments of Identity', 'Alena Rodrigo', 10, 'img/card_ticket8.webp','img/imgEvento8.webp')
-let ticket9 = new TicketsHome(9, '07.05 WORKSHOP', '9:00','Creative Coding', 'Leon Hartmann', 25, 'img/card_ticket9.webp','img/imgEvent9.webp')
-let ticket10 = new TicketsHome(10, '08.05 FINAL', '10:00','Final Event', '', 'FREE', 'img/card_ticket10.webp','img/imgEvent10.webp')
+let ticket1 = new TicketsHome(1, '03.05 WORKSHOP', '10:00', 'Visual Identity Lab', 'Luca Moretti / Sofia Van Dijk', 25, 'img/card_ticket1.webp', 'img/imgEvento1.webp')
+let ticket2 = new TicketsHome(2, '03.05 TALK', '15:00', 'Designing new Perspectives', 'Arthur Bellamy / Lina Kovacs / Eva Rossetti', 'FREE', 'img/card_ticket2.webp', 'img/imgEvento2.webp')
+let ticket3 = new TicketsHome(3, '04.05 INSTALLATION', '10:00', 'Sonic Territories', 'Aya Nakamura', 10, 'img/card_ticket3.webp', 'img/imgEvento3.webp')
+let ticket4 = new TicketsHome(4, '04.05 PERFORMANCE', '15:00', 'Motion in Space', 'Leon Hartmann', 15, 'img/card_ticket4.webp', 'img/imgEvento4.webp')
+let ticket5 = new TicketsHome(5, '05.05 TALK', '10:00', 'The future of Art', 'Noah Visser', 'FREE', 'img/card_ticket5.webp', 'img/imgEvento5.webp')
+let ticket6 = new TicketsHome(6, '05.05 WORKSHOP', '15:00', 'Typography Lab', 'Thomas Vermeer / Sofia Van Dijk', 25, 'img/card_ticket6.webp', 'img/imgEvento6.webp')
+let ticket7 = new TicketsHome(7, '06.05 PERFORMANCE', '10:00', 'Deep Listening', 'Aya Nakamura', 15, 'img/card_ticket7.webp', 'img/imgEvento7.webp')
+let ticket8 = new TicketsHome(8, '06.05 INSTALLATION', '15:00', 'Fragments of Identity', 'Alena Rodrigo', 10, 'img/card_ticket8.webp', 'img/imgEvento8.webp')
+let ticket9 = new TicketsHome(9, '07.05 WORKSHOP', '9:00', 'Creative Coding', 'Leon Hartmann', 25, 'img/card_ticket9.webp', 'img/imgEvent9.webp')
+let ticket10 = new TicketsHome(10, '08.05 FINAL', '10:00', 'Final Event', '', 'FREE', 'img/card_ticket10.webp', 'img/imgEvent10.webp')
 
 let tickets = [ticket1, ticket2, ticket3]
 let ticketEvents = [ticket1, ticket2, ticket3, ticket4, ticket5, ticket6, ticket7, ticket8, ticket9, ticket10]
@@ -200,17 +200,17 @@ class CardArtisti {
     }
 }
 
-let cardartista1 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
-let cardartista2 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
-let cardartista3 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
-let cardartista4 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
-let cardartista5 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
-let cardartista6 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
-let cardartista7 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
-let cardartista8 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
-let cardartista9 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
-let cardartista10 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
-let cardartista11 = new CardArtisti('img/artista1.webp', 'Luca Moretti', 'Visual artist')
+let cardartista1 = new CardArtisti('img/luca_moretti.webp', 'Luca Moretti', 'Visual artist')
+let cardartista2 = new CardArtisti('img/sofia_van_dijk.webp', 'Sofia Van Dijk', 'Visual artist')
+let cardartista3 = new CardArtisti('img/arthur_bellamy.webp', 'Arthur Bellamy', 'Photographer')
+let cardartista4 = new CardArtisti('img/lina_kovacs.webp', 'Lina Kovacs', 'Visual artist')
+let cardartista5 = new CardArtisti('img/eva_rossetti.webp', 'Eva Rossetti', 'Visual artist')
+let cardartista6 = new CardArtisti('img/aya_nakamura.webp', 'Aya Nakamura', 'Sound artist')
+let cardartista7 = new CardArtisti('img/nora_bellini.webp', 'Nora Bellini', 'Visual artist')
+let cardartista8 = new CardArtisti('img/noah_visser.webp', 'Noah Visser', 'Visual artist')
+let cardartista9 = new CardArtisti('img/thomas_vermeer.webp', 'Thomas Vermeer', 'Visual artist')
+let cardartista10 = new CardArtisti('img/alena_rodrigo.webp', 'Alena Rodrigo', 'Visual artist')
+let cardartista11 = new CardArtisti('img/leon_hartmann.webp', 'Leon Hartmann', 'Visual artist')
 
 let cardsartisti = [cardartista1, cardartista2, cardartista3, cardartista4, cardartista5, cardartista6, cardartista7, cardartista8, cardartista9, cardartista10, cardartista11]
 let contArtisti = document.querySelector('#mainArtisti')
