@@ -193,32 +193,40 @@ if (contGallery) {
 
 //CLASSE E ISTANZE CARD ARTISTI IN ARTISTS
 class CardArtisti {
-    constructor(img, nome, tipo) {
+    constructor(id, img, nome, tipo, biografia) {
+        this.id = id
         this.img = img
         this.nome = nome
         this.tipo = tipo
+        this.biografia = biografia
     }
 }
 
-let cardartista1 = new CardArtisti('img/luca_moretti.webp', 'Luca Moretti', 'Visual artist')
-let cardartista2 = new CardArtisti('img/sofia_van_dijk.webp', 'Sofia Van Dijk', 'Visual artist')
-let cardartista3 = new CardArtisti('img/arthur_bellamy.webp', 'Arthur Bellamy', 'Photographer')
-let cardartista4 = new CardArtisti('img/lina_kovacs.webp', 'Lina Kovacs', 'Visual artist')
-let cardartista5 = new CardArtisti('img/eva_rossetti.webp', 'Eva Rossetti', 'Visual artist')
-let cardartista6 = new CardArtisti('img/aya_nakamura.webp', 'Aya Nakamura', 'Sound artist')
-let cardartista7 = new CardArtisti('img/nora_bellini.webp', 'Nora Bellini', 'Visual artist')
-let cardartista8 = new CardArtisti('img/noah_visser.webp', 'Noah Visser', 'Visual artist')
-let cardartista9 = new CardArtisti('img/thomas_vermeer.webp', 'Thomas Vermeer', 'Visual artist')
-let cardartista10 = new CardArtisti('img/alena_rodrigo.webp', 'Alena Rodrigo', 'Visual artist')
-let cardartista11 = new CardArtisti('img/leon_hartmann.webp', 'Leon Hartmann', 'Visual artist')
+let cardartista1 = new CardArtisti(1, 'img/luca_moretti.webp', 'Luca Moretti', 'Visual artist', 'Luca Moretti is a visual designer working across graphic design, branding, and digital communication. His practice explores the relationship between visual identity and contemporary culture, combining conceptual research with a strong attention to typography, composition, and detail. Inspired by architecture and urban environments, he experiments with colour and visual structures to transform ideas into distinctive graphic languages. Through his work, Luca seeks to create visual experiences that balance functionality and artistic expression.')
+let cardartista2 = new CardArtisti(2, 'img/sofia_van_dijk.webp', 'Sofia Van Dijk', 'Visual artist', 'Sofia Van Dijk is a visual artist exploring the relationship between image, memory, and everyday life. Through collage, mixed media, and digital experimentation, she creates compositions that combine personal experiences with references from contemporary culture. Her process involves collecting and rearranging photographs, textures, and visual fragments to discover unexpected connections. By transforming familiar images into new visual narratives, Sofia invites audiences to reconsider how memories and everyday experiences shape our perception of the world.')
+let cardartista3 = new CardArtisti(3, 'img/arthur_bellamy.webp', 'Arthur Bellamy', 'Photographer', 'Arthur Bellamy is a photographer exploring the relationship between people, architecture, and urban environments. Through documentary photography and a careful use of light, he captures overlooked details and unexpected moments within everyday spaces. Fascinated by the complexity of contemporary cities, he focuses on textures, reflections, and the interactions between people and their surroundings. His images reveal the hidden stories of ordinary places, encouraging viewers to reconsider familiar environments and discover the emotional connections between individuals, architecture, and collective memory.')
+let cardartista4 = new CardArtisti(4, 'img/lina_kovacs.webp', 'Lina Kovacs', 'Visual artist', 'Lina Kovacs is a visual artist working with colour, form, and spatial composition. Her multidisciplinary practice combines graphic experimentation with an interest in architecture, geometric patterns, and contemporary design. By exploring repetition, contrast, and unexpected arrangements, she creates compositions that balance structure with spontaneity. Her creative process combines systematic research with intuitive decisions, allowing simple visual elements to develop into expressive forms. Through her work, Lina investigates how visual order, rhythm, and colour can communicate emotions and transform familiar graphic structures into new artistic experiences.')
+let cardartista5 = new CardArtisti(5, 'img/eva_rossetti.webp', 'Eva Rossetti', 'Visual artist', 'Eva Rossetti is a visual artist interested in the emotional and cultural dimensions of images. Working with illustration, mixed media, and digital composition, she develops visual narratives inspired by human relationships and everyday observations. Her practice combines expressive forms, symbolic elements, and carefully constructed details to explore how images communicate ideas beyond language. Drawing inspiration from ordinary gestures, personal objects, and fleeting moments, Eva transforms everyday experiences into imaginative compositions. Her work encourages audiences to look beyond the surface of an image and discover the emotions and stories hidden within visual details.')
+let cardartista6 = new CardArtisti(6, 'img/aya_nakamura.webp', 'Aya Nakamura', 'Sound artist', 'Aya Nakamura is a sound artist exploring the relationship between listening, space, and perception. Through field recordings, electronic textures, and experimental compositions, she transforms environmental sounds into immersive auditory experiences. Collecting sounds from streets, public spaces, and natural environments, she combines recognisable noises with abstract acoustic elements. Her work investigates how sound can evoke memories, influence perception, and create emotional connections with places. By encouraging audiences to pay attention to the acoustic details of their surroundings, Aya reveals new ways of experiencing familiar environments through listening.')
+let cardartista7 = new CardArtisti(7, 'img/nora_bellini.webp', 'Nora Bellini', 'Visual artist', 'Nora Bellini is a visual artist exploring identity, symbolism, and the relationship between personal narratives and collective imagination. Through layered imagery, expressive forms, and carefully selected materials, she creates compositions that balance abstraction with recognizable references. Her work draws inspiration from cultural traditions, personal memories, and contemporary media, investigating how symbols acquire different meanings across contexts. By combining fragmented figures, contrasting elements, and visual references, Nora develops narratives that remain open to interpretation. Her practice invites viewers to question familiar symbols and reflect on how images influence individual identity and shared cultural experiences.')
+let cardartista8 = new CardArtisti(8, 'img/noah_visser.webp', 'Noah Visser', 'Visual artist', 'Noah Visser is a visual artist investigating the relationship between technology and creative expression. Working with digital imagery, generative processes, and experimental composition, he explores how algorithms and computational systems can become tools for artistic research. His projects combine structured visual logic with unexpected outcomes, creating images that move between precision and spontaneity. Interested in the influence of technology on contemporary visual culture, Noah examines how automated processes can transform traditional approaches to image-making. His work questions the boundaries between human intention and digital systems, encouraging audiences to reconsider the possibilities of creativity in an increasingly technological world.')
+let cardartista9 = new CardArtisti(9, 'img/thomas_vermeer.webp', 'Thomas Vermeer', 'Visual artist', 'Thomas Vermeer is a visual artist specialising in typography, editorial systems, and experimental graphic design. His practice explores how letters, grids, and visual hierarchies communicate meaning beyond written language. Drawing inspiration from printed publications and contemporary visual culture, he combines traditional typographic principles with unconventional layouts. Through experimentation with scale, spacing, and contrast, Thomas creates compositions that balance clarity with visual disruption. His work investigates the relationship between text and image, demonstrating how graphic design can function both as a practical communication tool and as an independent artistic language.')
+let cardartista10 = new CardArtisti(10, 'img/alena_rodrigo.webp', 'Alena Rodrigo', 'Visual artist', 'Alena Rodrigo is a visual artist exploring the relationship between memory, material, and personal identity. Through photography, collage, and mixed media, she creates layered compositions reflecting on how experiences shape our perception of the world. Her work combines fragmented photographs, tactile surfaces, and contrasting textures to represent the imperfect nature of memory. Interested in the relationship between personal history and visual storytelling, Alena transforms everyday materials into expressive narratives that move between abstraction and recognizable moments. Her practice invites viewers to reflect on their own experiences and consider how images and objects contribute to the construction of identity.')
+let cardartista11 = new CardArtisti(11, 'img/leon_hartmann.webp', 'Leon Hartmann', 'Visual artist', 'Leon Hartmann is a multidisciplinary visual artist exploring the relationship between motion, space, and digital experimentation. Combining graphic design, animation, and dynamic compositions, he investigates how movement can transform the meaning of images. His work often develops from simple shapes, typographic elements, and visual patterns that evolve through repetition and unexpected transitions. Interested in the relationship between time and perception, Leon challenges the distinction between static design and moving imagery. Through his experimental approach, he creates visual experiences that encourage audiences to understand communication as an evolving process shaped by movement, rhythm, and interaction.')
 
 let cardsartisti = [cardartista1, cardartista2, cardartista3, cardartista4, cardartista5, cardartista6, cardartista7, cardartista8, cardartista9, cardartista10, cardartista11]
 let contArtisti = document.querySelector('#mainArtisti')
 
 if (contArtisti && document.querySelector('#heroArtists')) {
     for (let card of cardsartisti) {
-        contArtisti.innerHTML += `
-        <div class="d-flex flex-column">
+        let div = document.createElement('div')
+        div.classList.add('d-flex', 'flex-column')
+
+        div.addEventListener('click', () => {
+            window.location.href = `schedaartist.html?id=${card.id}`
+        })
+
+        div.innerHTML += `
                             <div>
                                 <img src="${card.img}" alt="" class="w-100">
                             </div>
@@ -229,8 +237,8 @@ if (contArtisti && document.querySelector('#heroArtists')) {
                                 </div>
                                 <div><img src="img/arrow.svg" alt=""></div>
                             </div>
-                        </div>
         `
+        contArtisti.append(div)
     }
 }
 
