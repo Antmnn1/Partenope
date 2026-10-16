@@ -33,13 +33,14 @@ prezzo.textContent = selectedEvent.prezzo == "FREE" ? "FREE" : selectedEvent.pre
 
 //prendo immagine evento
 const sfondoEvento = document.querySelector('.sfondoEvento')
-sfondoEvento.style.backgroundImage = `url(${selectedEvent.imgEvento})`
+sfondoEvento.style.backgroundImage = `url(../${selectedEvent.imgEvento.replace(/^(\.\.\/)+/, '')})`
 
 const contenitoreTi = document.querySelector('#seeAlsoTickets')
 
 for (let ticket of ticketEvents) {
     ticketSplit = ticket.dataTitolo.split(' ')
     let categoriaDue = ticketSplit[1]
+
     if (categoriaDue === category && ticket.nomeEvento !== selectedEvent.nomeEvento) {
         let div = document.createElement('div')
         div.classList.add('contenitoreTicketsSeeAlso', 'd-flex')
@@ -49,9 +50,11 @@ for (let ticket of ticketEvents) {
             window.location.href = `schedaevent.html?id=${ticket.id}`
         })
 
+        const percorsoImmagine = `../${ticket.img.replace(/^(\.\.\/)+/, '')}`
+
         div.innerHTML = `
-    <div class="imgTicket">
-                <img src="${ticket.img}" alt="" class="w-100">
+            <div class="imgTicket">
+                <img src="${percorsoImmagine}" alt="" class="w-100">
             </div>
 
             <div class="Ticket">
@@ -66,17 +69,18 @@ for (let ticket of ticketEvents) {
                     </div>
                 </div>
             </div>
+
             <div class="plusTicket d-flex flex-column">
                 <div class="d-flex justify-content-center align-items-center">
                     <p>${ticket.prezzo === 'FREE' ? 'FREE' : ticket.prezzo + ' €'}</p>
                 </div>
 
                 <div class="d-flex align-items-center justify-content-center">
-                    <img src="img/plus.svg" alt="" width="72px" height="72px">
+                    <img src="../assets/img/plus.svg" alt="" width="72px" height="72px">
                 </div>
             </div>
-    
-    `
+        `
+
         contenitoreTi.append(div)
     }
 }

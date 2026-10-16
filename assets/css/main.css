@@ -143,7 +143,7 @@ h2 {
 
 #hero {
     height: 100vh;
-    background-image: url("img/img-home.webp");
+    background-image: url("../img/img-home.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -178,7 +178,7 @@ h2 {
 #uno {
     height: 100vh;
 
-    background-image: url("img/prima_section.webp");
+    background-image: url("../img/prima_section.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -369,7 +369,7 @@ div#primaSlideNews {
 }
 
 #cardAboutSx {
-    background-image: url('img/aboutSx.webp');
+    background-image: url('../img/aboutSx.webp');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -377,7 +377,7 @@ div#primaSlideNews {
 }
 
 #cardAboutDx {
-    background-image: url('img/aboutDx.webp');
+    background-image: url('../img/aboutDx.webp');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -643,7 +643,7 @@ button img {
 
 #heroAbout {
     height: 100vh;
-    background-image: url("img/sfondoAbout.webp");
+    background-image: url("../img/sfondoAbout.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -652,7 +652,7 @@ button img {
 
 #heroEvents {
     height: 100vh;
-    background-image: url("img/sfondoEvents.webp");
+    background-image: url("../img/sfondoEvents.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -661,7 +661,7 @@ button img {
 
 #heroArtists {
     height: 100vh;
-    background-image: url("img/sfondoArtists.webp");
+    background-image: url("../img/sfondoArtists.webp");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1002,7 +1002,7 @@ input:focus {
 }
 
 .sfondoEvento{
-    background-image: url(img/imgEvento1.webp);
+    background-image: url("../img/imgEvento1.webp");
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
