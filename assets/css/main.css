@@ -4,6 +4,7 @@
     --rosso: #FF0000;
     --nero: #000000;
     --bianco: #FFFFFF;
+    --linea: 2px solid var(--nero);
 }
 
 
@@ -43,14 +44,6 @@ body {
     font-weight: 400;
 }
 
-#uno {
-    height: 100vh;
-}
-
-#cinque {
-    height: fit-content;
-}
-
 h1,
 h2,
 h3,
@@ -58,74 +51,135 @@ p {
     margin: 0;
 }
 
-.logo {
+
+/* altro */
+
+#hero,
+#uno,
+#heroAbout,
+#heroEvents,
+#heroArtists {
+    height: 100vh;
+}
+
+#due,
+#tre,
+#quattro,
+#cinque,
+#sei,
+#contenitoreEvents,
+#contenitoreArtisti,
+#galleryPrecedenti {
+    height: fit-content;
+}
+
+#due,
+#galleryPrecedenti {
+    overflow: hidden;
+}
+
+.logo,
+#voci,
+#uno .bg-body {
+    width: fit-content;
+    height: fit-content;
+}
+
+#hero,
+#uno,
+#heroAbout,
+#heroEvents,
+#heroArtists,
+#cardAboutSx,
+#cardAboutDx,
+.sfondoEvento {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo,
+#button-hero,
+.button-about,
+#contenitoreTickets,
+.contenitoreTicketsSeeAlso,
+span:not(.titoloFiltro) {
     cursor: pointer;
 }
 
 
 /* tipografia */
 
-h1 {
+h1,
+h2 {
     color: var(--rosso);
-    font-size: 80px;
     font-weight: 700;
+}
+
+h1 {
+    font-size: 80px;
 }
 
 h2 {
-    color: var(--rosso);
     font-size: 64px;
-    font-weight: 700;
 }
 
+#uno p,
+p.contentNews,
+.contenitoreInfoAbout p,
+#tre p,
+#quattro p,
+#cinque p,
+form p,
+.sfondoEvento>div:first-of-type p,
+.contInfoArtist p,
+.accordion-body {
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 400;
+    line-height: 130%;
+}
+
+#tre p,
+#quattro p,
+#cinque p {
+    width: fit-content;
+}
+
+/* testi tickets */
 .bodyTicket h3 {
-    font-weight: bold;
     font-size: 56px;
+    font-weight: 700;
     line-height: 100%;
 }
 
-.bodyTicket p {
-    font-weight: 400;
-    font-size: 24px;
+.bodyTicket p,
+.redBar p,
+.plusTicket p {
+    font-size: clamp(16px, 2vw, 24px);
     line-height: 100%;
 }
 
 .redBar p,
 .plusTicket p {
     font-weight: 500;
-    font-size: 24px;
-    line-height: 100%;
     color: var(--bianco);
 }
+
 
 /* header */
 
 .logo {
-    width: fit-content;
-    height: fit-content;
     padding: 40px 60px;
     background-color: var(--rosso);
 }
 
 #voci {
-    width: fit-content;
-    height: fit-content;
-    border: 2px solid var(--nero);
+    border: var(--linea);
 }
 
 #voci ul {
     gap: 40px;
-    padding-top: 48px;
-    padding-bottom: 48px;
-}
-
-#voci li a{
-    text-decoration: none;
-    color: var(--nero);
-    font-size: 24px;
-}
-
-#voci li a:hover{
-    color: var(--rosso);
+    padding-block: 48px;
 }
 
 #voci ul li:first-of-type {
@@ -136,33 +190,108 @@ h2 {
     padding-right: 60px;
 }
 
+#voci li a {
+    text-decoration: none;
+    color: var(--nero);
+    font-size: 24px;
+}
 
-/* INIZIO PAGINA HOME */
+#voci li a:hover {
+    color: var(--rosso);
+}
+
+.menuMobile {
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--bianco);
+}
+
+
+/* bordi */
+
+.bordo,
+.bordoDestra,
+.bordoEventsSx,
+.bordoEventsDx,
+.bordoArtistiSx,
+.bordoArtistiDx,
+.bordoDestraMappa,
+.bordoDestraScheda,
+.bordoSinistraScheda {
+    width: 40px;
+    padding: 0;
+    background-color: var(--bianco);
+    border: var(--linea);
+}
+
+.bordo,
+.bordoDestra,
+.bordoEventsSx,
+.bordoEventsDx,
+.bordoArtistiSx,
+.bordoArtistiDx {
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    border-top: none;
+}
+
+.bordo,
+.bordoDestra {
+    height: 400px;
+    border-bottom: none;
+}
+
+.bordoEventsSx,
+.bordoEventsDx,
+.bordoArtistiSx,
+.bordoArtistiDx {
+    height: 100%;
+}
+
+.bordoArtistiSx,
+.bordoArtistiDx,
+.bordoDestraMappa,
+.bordoDestraScheda,
+.bordoSinistraScheda {
+    border-bottom: none;
+}
+
+.bordo,
+.bordoEventsSx,
+.bordoArtistiSx {
+    left: 0;
+}
+
+.bordoDestra,
+.bordoEventsDx,
+.bordoArtistiDx {
+    right: 0;
+}
+
+
+/* pagina home */
 
 /* hero */
 
 #hero {
-    height: 100vh;
     background-image: url("../img/img-home.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
-#button-hero {
+#button-hero,
+#cardAboutSx .button-about,
+#cardAboutDx .button-about {
     position: absolute;
     left: 0;
     bottom: 0;
-
     width: 100%;
     height: 80px;
-
     padding: 0 60px;
-
     background-color: var(--rosso);
-    border: 2px solid var(--nero);
+}
 
-    cursor: pointer;
+#button-hero {
+    border: var(--linea);
 }
 
 #button-hero p {
@@ -176,19 +305,11 @@ h2 {
 /* news */
 
 #uno {
-    height: 100vh;
-
     background-image: url("../img/prima_section.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 #uno .bg-body {
-    width: fit-content;
-    height: fit-content;
-
-    border: 2px solid var(--nero);
+    border: var(--linea);
     border-top: none;
 }
 
@@ -201,114 +322,66 @@ h2 {
     border-left: 0;
 }
 
-#uno p,
-p.contentNews,
-.contenitoreInfoAbout p {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 130%;
-}
-
-#due {
-    height: fit-content;
-    overflow: hidden;
-}
-
 #due .contenitoreTitolo,
 .contenitoreTitoloHeadingDue {
-    padding-top: 96px;
-    padding-bottom: 96px;
+    padding-block: 96px;
     padding-left: 60px;
-
-    border: 2px solid var(--nero);
+    border: var(--linea);
 }
 
 
-/* bordi */
-
-.bordo,
-.bordoDestra {
-    position: absolute;
-    top: 0;
-    z-index: 5;
-
-    width: 40px;
-    height: 400px;
-
-    padding: 0;
-
-    background-color: var(--bianco);
-
-    border: 2px solid var(--nero);
-    border-top: none;
-    border-bottom: none;
-}
-
-.bordo {
-    left: 0;
-}
-
-.bordoDestra {
-    right: 0;
-}
-
-
-/* swiper */
+/* swiper news */
 
 .swiper-wrapper {
-    display: flex;
+    display: flex
 }
 
-#due.swiper-wrapper {
-    width: calc(100% - 60px);
+#due .swiper {
+    padding-left: 40px;
 }
 
 #due .swiper-slide {
-    min-width: 33.333337%;
+    min-width: 33.3333%;
     height: 400px;
 }
 
-.cardNews {
+.cardNews,
+.cardGallery,
+.Ticket {
     display: flex;
     flex-direction: column;
+}
 
+.cardNews,
+.cardGallery {
     height: 100%;
+}
 
-    font-size: 24px;
+.cardNews {
+    font-size: clamp(16px, 2vw, 24px);
 }
 
 .titoloNews {
     padding: 20px 0;
-
     color: var(--bianco);
     text-align: center;
     font-weight: 500;
-
     background-color: var(--rosso);
-
-    border-right: 2px solid var(--nero);
-    border-left: 2px solid var(--nero);
+    border-right: var(--linea);
+    border-left: var(--linea);
 }
 
 .contentNews {
     flex: 1;
-
     padding: 24px 24px 0;
-
-    border-top: 2px solid var(--nero);
-    border-right: 2px solid var(--nero);
-    border-left: 2px solid var(--nero);
+    border: var(--linea);
+    border-bottom: none;
 }
 
 #primaSlideNews .cardNews .titoloNews,
 #primaSlideNews .cardNews .contentNews {
     border-left: 0;
 }
-
-div#primaSlideNews {
-    padding-left: 40px;
-}
-
 
 /* home about */
 
@@ -317,32 +390,18 @@ div#primaSlideNews {
     background-color: var(--bianco);
 }
 
-#tre p {
-    width: fit-content;
-
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 130%;
-}
-
 .pSec {
     width: 70%;
-
-    border: 2px solid var(--nero);
+    border: var(--linea);
     border-left: 0;
 }
 
 
 /* home about cards */
 
-#tre {
-    height: fit-content;
-}
-
 #contCardAbout {
     gap: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-inline: 40px;
 }
 
 #cardAboutSx,
@@ -351,37 +410,19 @@ div#primaSlideNews {
     height: 400px;
 }
 
-#cardAboutSx .button-about,
-#cardAboutDx .button-about {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-
-    width: 100%;
-    height: 80px;
-
-    padding: 0 60px;
-
-    background-color: var(--rosso);
-    border-top: 2px solid var(--nero);
-
-    cursor: pointer;
-}
-
 #cardAboutSx {
-    background-image: url('../img/aboutSx.webp');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-right: 2px solid var(--nero);
+    background-image: url("../img/aboutSx.webp");
+    border-right: var(--linea);
 }
 
 #cardAboutDx {
-    background-image: url('../img/aboutDx.webp');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-left: 2px solid var(--nero);
+    background-image: url("../img/aboutDx.webp");
+    border-left: var(--linea);
+}
+
+#cardAboutSx .button-about,
+#cardAboutDx .button-about {
+    border-top: var(--linea);
 }
 
 .button-about p {
@@ -391,76 +432,21 @@ div#primaSlideNews {
     line-height: 100%;
 }
 
-/* about events */
 
-#quattro {
-    height: fit-content;
-}
+/* about events: ticket */
 
-div#appendTickets {
+#appendTickets,
+#mainArtisti,
+.contFiltri,
+.contP {
     width: calc(100% - 80px);
     margin: 0 auto;
 }
 
-#quattro p,
-#cinque p {
-    width: fit-content;
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 130%;
-}
-
-#contenitoreEvents,
-#contenitoreArtisti {
-    height: fit-content;
-}
-
-.bordoEventsSx,
-.bordoArtistiSx {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 5;
-
-    width: 40px;
-    height: 100%;
-
-    padding: 0;
-
-    background-color: var(--bianco);
-
-    border: 2px solid var(--nero);
-    border-top: none;
-}
-
-.bordoEventsDx,
-.bordoArtistiDx {
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 5;
-
-    width: 40px;
-    height: 100%;
-
-    padding: 0;
-
-    background-color: var(--bianco);
-
-    border: 2px solid var(--nero);
-    border-top: none;
-}
-
-.bordoArtistiDx,
-.bordoArtistiSx {
-    border-bottom: none;
-}
-
-
 #contenitoreTickets {
     width: 100%;
     aspect-ratio: 5.71;
-    border-bottom: 2px solid var(--nero);
+    border-bottom: var(--linea);
 }
 
 .imgTicket {
@@ -468,32 +454,34 @@ div#appendTickets {
     height: 100%;
 }
 
-.imgTicket img {
-    height: 100%;
-    object-fit: cover;
-}
-
 .Ticket {
     width: 68%;
-    display: flex;
-    flex-direction: column;
-    border-left: 2px solid var(--nero);
+    border-left: var(--linea);
 }
 
 .plusTicket {
     width: 16%;
 }
 
-.redBar {
+.redBar,
+.plusTicket>div:first-child {
+    padding-block: 20px;
     background-color: var(--rosso);
-    border-bottom: 2px solid var(--nero);
-    padding-top: 20px;
-    padding-bottom: 20px;
+    border-bottom: var(--linea);
+}
+
+.plusTicket>div:first-child {
+    border-left: var(--linea);
+}
+
+.plusTicket>div:nth-child(2) {
+    flex: 1;
+    border-left: var(--linea);
 }
 
 .bodyTicket {
-    background-color: var(--bianco);
     flex: 1;
+    background-color: var(--bianco);
 }
 
 .bodyTicket div {
@@ -501,130 +489,111 @@ div#appendTickets {
     height: 100%;
 }
 
-.plusTicket>div:first-child {
-    background-color: var(--rosso);
-    border-bottom: 2px solid var(--nero);
-    border-left: 2px solid var(--nero);
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
 
-.plusTicket>div:nth-child(2) {
-    flex: 1;
-    border-left: 2px solid var(--nero);
-}
-
-/* sezione artisti */
+/* sezione artisti (home) */
 
 #cinque>div:first-child div {
     border-top: none;
-}
-
-#mainArtisti {
-    width: calc(100% - 80px);
-    margin: 0 auto;
 }
 
 #mainArtisti>div {
     width: calc((100% - 40px) / 3);
 }
 
+#mainArtisti.flex-wrap {
+    gap: 20px;
+}
+
 #mainArtisti>div>div:first-of-type img {
-    border-right: 2px solid var(--nero);
+    border-right: var(--linea);
+}
+
+#mainArtisti>div>div img.artista2,
+#mainArtisti>div>div img.artista3 {
+    border-left: var(--linea);
+}
+
+#mainArtisti>div>div img.artista3 {
+    border-right: none;
 }
 
 .fasciaCardArtisti {
-    background-color: var(--rosso);
+    flex: 1;
     align-items: center;
     padding: 20px;
-    border-top: 2px solid var(--nero);
-    border-right: 2px solid var(--nero);
-    flex: 1;
-}
-
-.fasciaCardArtisti>div:first-of-type>p:first-of-type {
-    font-weight: bold;
-    font-size: 24px;
-    color: var(--bianco);
-}
-
-.fasciaCardArtisti>div:first-of-type>p:nth-child(2) {
-    font-weight: 400;
-    font-size: 24px;
-    color: var(--bianco);
+    background-color: var(--rosso);
+    border-top: var(--linea);
+    border-right: var(--linea);
 }
 
 .fasciaCardArtisti>div:first-of-type {
     gap: 8px;
 }
 
-#mainArtisti>div>div img.artista2 {
-    border-left: 2px solid var(--nero);
+.fasciaCardArtisti>div:first-of-type>p {
+    font-size: clamp(16px, 2vw, 24px);
+    color: var(--bianco);
 }
 
-#mainArtisti>div>div img.artista3 {
-    border-left: 2px solid var(--nero);
-    border-right: none;
+.fasciaCardArtisti>div:first-of-type>p:first-of-type {
+    font-weight: bold;
 }
 
 #mainArtisti>div:nth-child(2)>.fasciaCardArtisti {
-    border-left: 2px solid var(--nero);
+    border-left: var(--linea);
 }
 
 #mainArtisti>div:nth-child(3)>.fasciaCardArtisti {
-    border-left: 2px solid var(--nero);
+    border-left: var(--linea);
     border-right: none;
 }
+
 
 /* form e newsletter */
 
 #sei {
-    border: 2px solid var(--nero);
-    padding: 96px 60px;
-    height: fit-content;
-}
-
-form p {
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 130%;
-    padding-bottom: 32px;
-}
-
-input[type="email"] {
-    width: 100%;
-    height: 57px;
-    border: 2px solid var(--nero);
-    border-bottom: none;
-    padding-left: 40px;
-    font-family: 'Helvetica Now Display';
-    font-size: 24px;
-    font-weight: 400;
-}
-
-input::placeholder {
-    font-family: 'Helvetica Now Display';
-    font-weight: 400;
-    font-size: 24px;
-    color: #bbbbbb;
-}
-
-form button, .contInfoArtist button {
-    width: 100%;;
-    background-color: var(--rosso);
-    line-height: 100%;
+    padding: 96px 40px;
+    border: var(--linea);
 }
 
 form {
     gap: 20px;
 }
 
+form p {
+    padding-bottom: 32px;
+}
+
+form input {
+    border: var(--linea);
+}
+
+input[type="email"],
+#zonaForm input[type="text"] {
+    width: 100%;
+    height: 57px;
+    padding-left: 40px;
+    border-bottom: none;
+    font-family: 'Helvetica Now Display';
+    font-size: 24px;
+    font-weight: 400;
+}
+
+input::placeholder {
+    color: #bbbbbb;
+}
+
+input:focus,
+.accordion-button:focus {
+    outline: none;
+}
+
 button {
+    padding: 20px 40px;
+    color: var(--bianco);
     font-size: 32px;
     font-weight: bold;
-    color: var(--bianco);
-    padding: 20px 40px;
-    border: 2px solid var(--nero);
+    border: var(--linea);
 }
 
 button img {
@@ -632,40 +601,45 @@ button img {
     height: auto;
 }
 
+form button,
+.contInfoArtist button {
+    width: 100%;
+    background-color: var(--rosso);
+    line-height: 100%;
+}
+
 .divisore {
     width: 100%;
     height: 96px;
-    border-left: 2px solid var(--nero);
-    border-right: 2px solid var(--nero);
+    border-left: var(--linea);
+    border-right: var(--linea);
 }
 
-/* INIZIO PAGINA ABOUT */
+.divisore.bordoSopra {
+    border-top: var(--linea);
+    border-left: none;
+    border-right: none;
+}
+
+
+/* pagina about */
 
 #heroAbout {
-    height: 100vh;
     background-image: url("../img/sfondoAbout.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-bottom: 2px solid var(--nero);
 }
 
 #heroEvents {
-    height: 100vh;
     background-image: url("../img/sfondoEvents.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-bottom: 2px solid var(--nero);
 }
 
 #heroArtists {
-    height: 100vh;
     background-image: url("../img/sfondoArtists.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-bottom: 2px solid var(--nero);
+}
+
+#heroAbout,
+#heroEvents,
+#heroArtists {
+    border-bottom: var(--linea);
 }
 
 #heroAbout>div,
@@ -674,70 +648,52 @@ button img {
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: var(--bianco);
-    border: 2px solid var(--nero);
     padding: 96px 60px;
+    background-color: var(--bianco);
+    border: var(--linea);
 }
 
 
 /* info */
 
 .contenitoreInfoAbout {
-    padding-right: 60px;
-    padding-left: 60px;
-    border: 2px solid var(--nero);
+    padding-inline: 60px;
+    border: var(--linea);
 }
 
 .contenitoreInfoAbout>div {
     width: 50%;
 }
 
-.contenitoreInfoAbout>div:first-of-type {
-    width: 50%;
+.contenitoreInfoAbout>div:nth-of-type(2) {
+    padding-block: 96px;
+    border-left: var(--linea);
 }
 
-.contenitoreInfoAbout>div:nth-of-type(2) {
-    padding-top: 96px;
-    padding-bottom: 96px;
-    border-left: 2px solid var(--nero);
-}
 
 /* gallery edizioni precedenti */
+
 #galleryPrecedenti .contenitoreTitolo {
     padding: 96px 0 96px 60px;
-    border-left: 2px solid var(--nero);
-    border-right: 2px solid var(--nero);
+    border-left: var(--linea);
+    border-right: var(--linea);
 }
 
 #galleryPrecedenti>div:nth-of-type(2) {
-    border-bottom: 2px solid var(--nero);
+    border-bottom: var(--linea);
 }
 
 #galleryPrecedenti .bordo {
-    border-top: 2px solid var(--nero);
-}
-
-#galleryPrecedenti {
-    height: fit-content;
-    overflow: hidden;
-}
-
-#galleryPrecedenti p {
-    font-weight: bold;
-    font-size: 32px;
+    border-top: var(--linea);
 }
 
 #galleryPrecedenti .mySwiper {
     height: 400px;
     padding-left: 40px;
-    border-top: 2px solid black;
+    border-top: var(--linea);
 }
 
-
-#galleryPrecedenti .swiper-wrapper {
-    height: 100%;
-}
-
+#galleryPrecedenti .swiper-wrapper,
 #galleryPrecedenti .swiper-slide {
     height: 100%;
 }
@@ -749,29 +705,30 @@ button img {
     color: var(--bianco);
 }
 
+#galleryPrecedenti p,
+.cardGallery p {
+    font-size: 32px;
+    font-weight: bold;
+}
+
 .cardGallery {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
     position: relative;
 }
 
-#galleryPrecedenti img {
+/* immagini che riempiono il contenitore */
+#galleryPrecedenti img,
+.imgTicket img,
+.contImgArtist img {
     height: 100%;
     object-fit: cover;
 }
 
-.cardGallery p {
-    font-weight: bold;
-    font-size: 32px;
-}
 
-/* PAGINA EVENTS */
+/* pagina events */
+
 .contFiltri {
-    width: calc(100% - 80px);
-    margin: 0 auto;
     padding: 96px;
-    border-bottom: 2px solid var(--nero);
+    border-bottom: var(--linea);
 }
 
 .titoloFiltro {
@@ -779,10 +736,9 @@ button img {
 }
 
 span {
-    font-family: inherit;
     font-size: 24px;
     font-weight: 400;
-    letter-spacing: 1%;
+    letter-spacing: 0.01em;
     color: var(--rosso);
 }
 
@@ -794,13 +750,11 @@ span {
     gap: 16px;
 }
 
-span:not(.titoloFiltro) {
-    cursor: pointer;
-}
 
-/* PAGINA ARTISTS */
+/* pagina artists */
+
 .unoArtisti {
-    border-bottom: 2px solid var(--nero);
+    border-bottom: var(--linea);
 }
 
 .unoArtisti .bordoEventsSx,
@@ -808,55 +762,47 @@ span:not(.titoloFiltro) {
     border-bottom: none;
 }
 
-#mainArtisti.flex-wrap {
-    gap: 20px;
-}
-
-.unoArtisti #mainArtisti>div:nth-child(2),
-.unoArtisti #mainArtisti>div:nth-child(5),
-.unoArtisti #mainArtisti>div:nth-child(8),
-.unoArtisti #mainArtisti>div:nth-child(11) {
-    border-left: 2px solid var(--nero);
-}
-
+/* colonna di sinistra e di destra di ogni riga */
+.unoArtisti #mainArtisti>div:nth-child(3n + 2),
 .unoArtisti #mainArtisti>div:nth-child(3n) {
-    border-left: 2px solid var(--nero);
+    border-left: var(--linea);
 }
 
-.unoArtisti #mainArtisti>div:nth-child(3) img,
-.unoArtisti #mainArtisti>div:nth-child(6) img,
-.unoArtisti #mainArtisti>div:nth-child(9) img,
-.unoArtisti #mainArtisti>div:nth-child(6) .fasciaCardArtisti,
-.unoArtisti #mainArtisti>div:nth-child(9) .fasciaCardArtisti {
+/* ultima colonna: niente bordo a destra */
+.unoArtisti #mainArtisti>div:nth-child(3n) img,
+.unoArtisti #mainArtisti>div:nth-child(3n) .fasciaCardArtisti {
     border-right: none;
 }
 
-.unoArtisti #mainArtisti>div:nth-child(3) .fasciaCardArtisti,
-.unoArtisti #mainArtisti>div:nth-child(2) .fasciaCardArtisti {
+.unoArtisti #mainArtisti>div:nth-child(3n + 2) .fasciaCardArtisti,
+.unoArtisti #mainArtisti>div:nth-child(3n) .fasciaCardArtisti {
     border-left: none;
 }
 
+/* bordi tra le righe */
 .unoArtisti #mainArtisti>div:nth-child(-n + 3) {
-    border-bottom: 2px solid var(--nero);
+    border-bottom: var(--linea);
 }
 
 .unoArtisti #mainArtisti>div:nth-child(n + 4):nth-child(-n + 9) {
-    border-top: 2px solid var(--nero);
-    border-bottom: 2px solid var(--nero);
+    border-top: var(--linea);
+    border-bottom: var(--linea);
 }
 
 .unoArtisti #mainArtisti>div:nth-child(n + 10):nth-child(-n + 11) {
-    border-top: 2px solid var(--nero);
+    border-top: var(--linea);
 }
 
-/* contact */
+
+/* pagina contact */
+
 #heroContact h1 {
     padding: 96px 60px;
 }
 
 #heroContact>div>div {
-    border: 2px solid var(--nero);
     width: fit-content;
+    border: var(--linea);
 }
 
 #heroContact>div>div:nth-child(2) {
@@ -867,7 +813,7 @@ span:not(.titoloFiltro) {
 #zonaForm {
     width: fit-content;
     padding: 96px 60px;
-    border: 2px solid var(--nero);
+    border: var(--linea);
     border-bottom: none;
 }
 
@@ -875,23 +821,18 @@ span:not(.titoloFiltro) {
     padding-bottom: 56px;
 }
 
-#zonaForm button {
-    padding: 20px 40px;
-    font-size: 32px;
+#zonaMappa {
+    flex: 1;
+    border-top: var(--linea);
+}
+
+#zonaMappa>div:first-of-type {
+    border-bottom: var(--linea);
 }
 
 #zonaMappa p {
     padding: 64px 32px;
-    font-size: 24px;
-}
-
-div#zonaMappa {
-    flex: 1;
-    border-top: 2px solid var(--nero)
-}
-
-#zonaMappa>div:first-of-type {
-    border-bottom: 2px solid var(--nero);
+    font-size: clamp(16px, 2vw, 24px);
 }
 
 #mappa {
@@ -903,41 +844,24 @@ div#zonaMappa {
     width: 100%;
     max-height: 492px;
     object-fit: cover;
-    border-top: 2px solid var(--nero);
+    border-top: var(--linea);
 }
 
-.bordoDestraMappa,
-.bordoDestraScheda, .bordoSinistraScheda {
-    width: 40px;
-    padding: 0;
-    background-color: var(--bianco);
-    border: 2px solid var(--nero);
-    border-bottom: none;
-}
-
-#zonaForm input[type="text"] {
+iframe {
     width: 100%;
-    height: 57px;
-    border-bottom: none;
-    padding-left: 40px;
-    font-family: 'Helvetica Now Display';
-    font-size: 24px;
-    font-weight: 400;
+    height: 100%;
 }
+
+
+/* faq */
 
 #faq {
-    border-top: 2px solid var(--nero);
+    border-top: var(--linea);
 }
 
 #faq .bordo {
     position: static;
-    width: 40px;
     height: 100%;
-    padding: 0;
-    background-color: var(--bianco);
-    border: 2px solid var(--nero);
-    border-top: none;
-    border-bottom: none;
 }
 
 #contFaq,
@@ -949,67 +873,43 @@ div#zonaMappa {
     font-size: 32px;
 }
 
-.accordion-body {
-    font-size: 24px;
-    line-height: 130%;
-}
-
-iframe {
-    width: 100%;
-    height: 100%;
-}
-
-form input {
-    border: 2px solid var(--nero)
-}
-
-input:focus {
-    outline: none;
-}
-
-.accordion-button:focus {
+.accordion-button:focus,
+.accordion-button:not(.collapsed) {
     box-shadow: none;
-    outline: none;
 }
 
 .accordion-button:not(.collapsed) {
     background-color: transparent;
     color: inherit;
-    box-shadow: none;
 }
+
 
 /* scheda evento */
 
 #heroSchedaEvento>div {
-    border: 2px solid var(--nero);
     padding: 96px 0 96px 60px;
+    border: var(--linea);
 }
 
-#schedaEvento .contFiltri{
+#schedaEvento .contFiltri {
     width: 100%;
     padding: 40px 96px;
     border-bottom: none;
 }
 
-#schedaEvento .bordoSinistraScheda, #schedaEvento .bordoDestraScheda{
+#schedaEvento .bordoSinistraScheda,
+#schedaEvento .bordoDestraScheda,
+#schedaArtist .bordoSinistraScheda,
+#schedaArtist .bordoDestraScheda {
     border-top: none;
 }
 
-.divisore.bordoSopra{
-    border-top: 2px solid var(--nero);
-    border-left: none;
-    border-right: none;
-}
-
-.sfondoEvento{
-    background-image: url("../img/imgEvento1.webp");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+.sfondoEvento {
     height: 940px;
+    background-image: url("../img/imgEvento1.webp");
 }
 
-.sfondoEvento > div:first-of-type{
+.sfondoEvento>div:first-of-type {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -1017,101 +917,72 @@ input:focus {
     height: 249px;
     padding: 70px 120px;
     background-color: var(--bianco);
-    border-top: 2px solid var(--nero);
-    border-right: 2px solid var(--nero);
+    border-top: var(--linea);
+    border-right: var(--linea);
     overflow: hidden;
 }
 
-.sfondoEvento > div:first-of-type p{
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 130%;
-}
-
-.sfondoEvento .plusTicket{
+.sfondoEvento .plusTicket {
     position: absolute;
     bottom: 0;
     right: 0;
     width: 222px;
     height: 249px;
-    border-top: 2px solid var(--nero);
+    border-top: var(--linea);
 }
 
-.seeAlso{
+.seeAlso {
     padding: 40px 60px;
-    border-top: 2px solid var(--nero);
+    border-top: var(--linea);
 }
 
-.seeAlso p{
-    font-size: 24px;
-    font-weight: 400;
+.seeAlso p {
+    font-size: clamp(16px, 2vw, 24px);
     color: var(--rosso);
 }
 
-#contenitoreTickets{
-    cursor: pointer;
+.contenitoreTicketsSeeAlso {
+    border-top: var(--linea);
 }
 
-.contenitoreTicketsSeeAlso{
-    border-top: 2px solid var(--nero);
-    cursor: pointer;
-}
 
 /* scheda artista */
-.contImgArtist{
-    max-width: 464px;
-    height: auto;
-}
 
-#schedaArtist .contFiltri{
-    border-bottom: none;
+#schedaArtist .contFiltri {
     margin: 0;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-block: 40px;
+    border-bottom: none;
 }
 
-#schedaArtist .bordoSinistraScheda, #schedaArtist .bordoDestraScheda{
-    border-top: none;
+#schedaArtist .divisore.bordoSopra {
+    border-bottom: var(--linea);
 }
 
-#schedaArtist .divisore.bordoSopra{
-    border-bottom: 2px solid var(--nero);
-}
-
-#schedaArtist button{
+#schedaArtist button {
     border-top: none;
     border-right: none;
 }
 
-.contImgArtist{
+.contImgArtist {
     width: 30%;
+    max-width: 464px;
     height: 100%;
 }
 
-.contInfoArtist{
+.contImgArtist img {
+    border-right: var(--linea);
+}
+
+.contInfoArtist {
     flex: 1;
 }
 
-.contImgArtist img{
-    border-right: 2px solid var(--nero);
-    object-fit: cover;
-    height: 100%;
-}
-
-.contInfoArtist .btnPortfolio{
+.contInfoArtist .btnPortfolio {
     background-color: var(--bianco);
     color: var(--nero);
 }
 
-.contInfoArtist p{
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 130%;
-}
-
-.contP{
-    width: calc(100% - 80px);
-    margin: 0 auto;
+.contP {
     height: calc(100% - 80px);
     padding: 40px;
 }
@@ -1119,3 +990,97 @@ input:focus {
 .btnBiography {
     border-left: none;
 }
+
+
+/* media queries */
+
+/* sotto i 1400px */
+@media (max-width: 1399.98px) {}
+
+/* sotto i 1200px */
+@media (max-width: 1257px) {
+    #voci {
+        display: none;
+    }
+
+    #uno .bg-body:nth-of-type(1) {
+        padding: 60px 200px 60px 60px;
+    }
+
+    #uno .bg-body:nth-of-type(2) {
+        padding: 55px 80px;
+        border-left: 0;
+    }
+
+    .bodyTicket h3 {
+        font-size: 32px;
+    }
+
+    h1 {
+        font-size: 64px;
+    }
+
+    h2 {
+        font-size: 48px;
+    }
+
+    .redBar,
+    .plusTicket>div:first-child {
+        padding-block: 10px;
+    }
+
+    .fasciaCardArtisti {
+        padding: 10px;
+    }
+
+    img[src="assets/img/arrow.svg"] {
+        width: 25px;
+        height: 25px;
+    }
+
+    .menuMobile {
+        display: inline-block !important;
+        position: absolute;
+        top: 60px;
+        right: 40px;
+    }
+}
+
+/* sotto i 992px */
+@media (max-width: 991.98px) {
+    #logoDesk {
+        display: none;
+    }
+
+    #logoMobile {
+        display: inline-block !important;
+        width: 220px;
+        height: auto;
+    }
+
+    .logo {
+        padding: 8px;
+        background-color: var(--rosso);
+    }
+
+    #uno>div {
+        flex-direction: column;
+    }
+
+    #uno .bg-body:nth-of-type(1) {
+        padding: 60px 290px 60px 60px;
+        width: 100%;
+    }
+    #uno .bg-body:nth-of-type(2) {
+        padding: 60px 60px 60px 60px;
+        width: 100%;
+        border: var(--linea);
+        border-top: none;;
+    }
+}
+
+/* sotto i 768px */
+@media (max-width: 767.98px) {}
+
+/* sotto i 576px (solo telefoni verticali) */
+@media (max-width: 575.98px) {}
