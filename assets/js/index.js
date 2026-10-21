@@ -20,7 +20,7 @@ if (contenitore) {
         let div = document.createElement('div')
         div.classList.add('swiper-slide')
         div.innerHTML = `
-                                <div class="cardNews">
+                                <div class="wrapCardNews">
                                     <div class="cardNews">
                                         <p class="titoloNews m-0">${card.dataTitolo}</p>
                                         <p class="contentNews m-0">${card.contenuto}</p>

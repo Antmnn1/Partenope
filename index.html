@@ -121,11 +121,11 @@
                 <div class="d-flex align-items-center justify-content-center pSec">
                     <p class="m-0">
                         Discover the story behind the festival, explore its
-                        <br>
+                        <br class="d-none d-md-inline">
                         creative journey, and revisit past editions through
-                        <br>
+                        <br class="d-none d-md-inline">
                         images, memories, and inspiring moments from
-                        <br>
+                        <br class="d-none d-md-inline">
                         our community.
                     </p>
                 </div>
@@ -137,7 +137,7 @@
 
                 <div class="bordo"></div>
 
-                <div id="contCardAbout" class="d-flex justify-content-between">
+                <div id="contCardAbout" class="d-flex flex-column flex-md-row justify-content-between">
 
                     <!-- ABOUT CARD LEFT -->
                     <div id="cardAboutSx" class="position-relative">
@@ -178,11 +178,11 @@
                     <h2 class="m-0">EVENTS</h2>
                 </div>
 
-                <div class="d-flex align-items-center justify-content-center pSec">
+                <div class="d-flex align-items-md-center justify-content-md-center pSec">
                     <p class="m-0">
-                        Explore our upcoming events and discover the <br> latest creative experiences, featuring
-                        inspiring <br>
-                        talks, exhibitions, installations, and encounters <br> with visionary minds.
+                        Explore our upcoming events and discover the <br class="d-none d-md-inline"> latest creative experiences, featuring
+                        inspiring <br class="d-none d-md-inline">
+                        talks, exhibitions, installations, and encounters <br class="d-none d-md-inline"> with visionary minds.
                     </p>
                 </div>
 
@@ -203,17 +203,17 @@
                     <h2 class="m-0">ARTISTS</h2>
                 </div>
 
-                <div class="d-flex align-items-center justify-content-center pSec">
+                <div class="d-flex align-items-md-center justify-content-md-center pSec">
                     <p class="m-0">
-                        Meet the artists and creators shaping the festival <br> experience, from emerging talents to
-                        established <br> voices pushing the boundaries of visual <br> expression.
+                        Meet the artists and creators shaping the festival <br class="d-none d-md-inline"> experience, from emerging talents to
+                        established <br class="d-none d-md-inline"> voices pushing the boundaries of visual <br class="d-none d-md-inline"> expression.
                     </p>
                 </div>
 
             </div>
             <div id="contenitoreArtisti" class="d-flex position-relative">
                 <div class="bordoArtistiSx"></div>
-                <div class="d-flex justify-content-between" id="mainArtisti">
+                <div class="d-flex justify-content-between flex-column flex-md-row" id="mainArtisti">
                     <div class="d-flex flex-column">
                         <div>
                             <img src="assets/img/luca_moretti.webp" alt="" class="w-100">
@@ -256,11 +256,11 @@
         </section>
 
         <section id="sei">
-            <form action="" class="d-flex align-items-end justify-content-between">
+            <form action="" class="d-flex align-items-end justify-content-between flex-column flex-md-row">
                 <div class="d-flex flex-column w-100">
                     <p>Receive updates on new events, exhibitions <br>
                         and calls for proposals by subscribing to our newsletter.</p>
-                    <input type="email" placeholder="Email">
+                    <input type="email" placeholder="Email" name="email">
                     <button type="submit" class="d-flex align-items-center justify-content-between">Subscribe <img
                             src="assets/img/arrow.svg" alt=""></button>
                 </div>
@@ -286,7 +286,7 @@
     <script src="assets/js/index.js"></script>
     <script>
         var swiper = new Swiper('.mySwiper', {
-            slidesPerView: 3,
+            slidesPerView: 'auto',
             spaceBetween: 20,
             freeMode: true,
             pagination: {

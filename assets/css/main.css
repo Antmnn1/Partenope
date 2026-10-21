@@ -134,7 +134,7 @@ form p,
 .sfondoEvento>div:first-of-type p,
 .contInfoArtist p,
 .accordion-body {
-    font-size: clamp(16px, 2vw, 24px);
+    font-size: clamp(20px, 2vw, 24px);
     font-weight: 400;
     line-height: 130%;
 }
@@ -333,7 +333,8 @@ form p,
 /* swiper news */
 
 .swiper-wrapper {
-    display: flex
+    display: flex;
+    gap: 20px;
 }
 
 #due .swiper {
@@ -341,15 +342,19 @@ form p,
 }
 
 #due .swiper-slide {
-    min-width: 33.3333%;
+    min-width: 300px;
     height: 400px;
+    margin-right: 0 !important;
 }
 
-.cardNews,
+.wrapCardNews,
 .cardGallery,
 .Ticket {
     display: flex;
     flex-direction: column;
+    border-right: 2px solid var(--nero);
+    border-left: 2px solid var(--nero);
+    height: 100%;
 }
 
 .cardNews,
@@ -367,21 +372,27 @@ form p,
     text-align: center;
     font-weight: 500;
     background-color: var(--rosso);
-    border-right: var(--linea);
-    border-left: var(--linea);
+    border: none;
+    border-bottom: 2px solid var(--nero);
 }
 
 .contentNews {
     flex: 1;
     padding: 24px 24px 0;
-    border: var(--linea);
+    border: none;
     border-bottom: none;
 }
 
-#primaSlideNews .cardNews .titoloNews,
-#primaSlideNews .cardNews .contentNews {
+#primaSlideNews .wrapCardNews .titoloNews,
+#primaSlideNews .wrapCardNews .contentNews {
     border-left: 0;
+    border-right: 0;
 }
+
+#primaSlideNews .wrapCardNews {
+    border-left: 0 !important;
+}
+
 
 /* home about */
 
@@ -470,13 +481,10 @@ form p,
     border-bottom: var(--linea);
 }
 
-.plusTicket>div:first-child {
-    border-left: var(--linea);
-}
+
 
 .plusTicket>div:nth-child(2) {
     flex: 1;
-    border-left: var(--linea);
 }
 
 .bodyTicket {
@@ -1029,10 +1037,6 @@ iframe {
         padding-block: 10px;
     }
 
-    .fasciaCardArtisti {
-        padding: 10px;
-    }
-
     img[src="assets/img/arrow.svg"] {
         width: 25px;
         height: 25px;
@@ -1071,16 +1075,113 @@ iframe {
         padding: 60px 290px 60px 60px;
         width: 100%;
     }
+
     #uno .bg-body:nth-of-type(2) {
         padding: 60px 60px 60px 60px;
         width: 100%;
         border: var(--linea);
-        border-top: none;;
+        border-top: none;
+        ;
     }
 }
 
 /* sotto i 768px */
-@media (max-width: 767.98px) {}
+@media (max-width: 767.98px) {
+    .wrapCardNews {
+        width: 100%;
+    }
+
+    #tre>div,
+    #quattro>div,
+    #cinque>div {
+        flex-direction: column;
+    }
+
+    .contenitoreTitoloHeadingDue {
+        width: 100%;
+    }
+
+    .pSec {
+        width: 100%;
+        border-top: none;
+        padding: 60px;
+        border-right: 2px solid var(--nero);
+        border-left: 2px solid var(--nero);
+    }
+
+    #due .contenitoreTitolo {
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+
+    #cardAboutSx {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid var(--nero);
+    }
+
+    #cardAboutDx {
+        width: 100%;
+        border-top: 2px solid var(--nero);
+        border-left: none;
+    }
+
+    .bordo {
+        height: 100%;
+    }
+
+    .bordoDestra {
+        height: 100%;
+    }
+
+    .contenitoreTitoloHeadingDue {
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+
+    #mainArtisti{
+        gap: 40px;
+    }
+
+    #mainArtisti>div {
+        width: 100%;
+        border-right: none;
+        border-left: none;
+    }
+
+    #mainArtisti .fasciaCardArtisti {
+        border-right: none;
+        border-left: none !important;
+        border-bottom: 2px solid var(--nero);
+    }
+
+    #mainArtisti .fasciaCardArtisti p{
+        font-size: 24px;
+    }
+
+    #mainArtisti>div>div:first-of-type img {
+        border-right: none;
+    }
+
+    #mainArtisti>div>div img.artista2,
+    #mainArtisti>div>div img.artista3 {
+        border-left: none;
+    }
+
+    #mainArtisti>div:last-of-type .fasciaCardArtisti{
+        border-bottom: none;
+    }
+
+    #mainArtisti>div:last-of-type{
+        border-top: 2px solid var(--nero);
+    }
+
+    #sei form>div:first-of-type{
+        margin-bottom: 30px;
+    }
+
+}
+
 
 /* sotto i 576px (solo telefoni verticali) */
 @media (max-width: 575.98px) {}
