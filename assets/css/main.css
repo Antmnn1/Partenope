@@ -78,6 +78,10 @@ p {
     overflow: hidden;
 }
 
+#galleryPrecedenti .swiper-slide {
+    margin-right: 0 !important;
+}
+
 .logo,
 #voci,
 #uno .bg-body {
@@ -134,7 +138,7 @@ form p,
 .sfondoEvento>div:first-of-type p,
 .contInfoArtist p,
 .accordion-body {
-    font-size: clamp(20px, 2vw, 24px);
+    font-size: clamp(16px, 2vw, 24px);
     font-weight: 400;
     line-height: 130%;
 }
@@ -329,6 +333,9 @@ form p,
     border: var(--linea);
 }
 
+#due>div:nth-of-type(2) {
+    height: fit-content;
+}
 
 /* swiper news */
 
@@ -343,8 +350,13 @@ form p,
 
 #due .swiper-slide {
     min-width: 300px;
-    height: 400px;
     margin-right: 0 !important;
+}
+
+#due .bordo,
+#due .swiper,
+#due .swiper-wrapper {
+    height: 100%;
 }
 
 .wrapCardNews,
@@ -378,7 +390,7 @@ form p,
 
 .contentNews {
     flex: 1;
-    padding: 24px 24px 0;
+    padding: 24px;
     border: none;
     border-bottom: none;
 }
@@ -1007,6 +1019,9 @@ iframe {
 
 /* sotto i 1200px */
 @media (max-width: 1257px) {
+
+    /* home */
+
     #voci {
         display: none;
     }
@@ -1048,10 +1063,18 @@ iframe {
         top: 60px;
         right: 40px;
     }
+
+    /* about */
+    .contenitoreInfoAbout>div:nth-of-type(2) {
+        padding-left: 96px;
+    }
 }
 
 /* sotto i 992px */
 @media (max-width: 991.98px) {
+
+    /* home */
+
     #logoDesk {
         display: none;
     }
@@ -1083,10 +1106,42 @@ iframe {
         border-top: none;
         ;
     }
+
+    #cardAboutSx {
+        width: 100%;
+        border-right: none;
+        border-bottom: 2px solid var(--nero);
+    }
+
+    #cardAboutDx {
+        width: 100%;
+        border-top: 2px solid var(--nero);
+        border-left: none;
+    }
+
+    .bordo {
+        height: 100%;
+    }
+
+    .bordoDestra {
+        height: 100%;
+    }
 }
 
 /* sotto i 768px */
 @media (max-width: 767.98px) {
+    p {
+        font-size: 20px !important;
+    }
+
+    .menuMobile {
+        top: 56px;
+        right: 16px;
+        font-size: 32px !important;
+    }
+
+    /* home */
+
     .wrapCardNews {
         width: 100%;
     }
@@ -1114,32 +1169,12 @@ iframe {
         padding-bottom: 72px;
     }
 
-    #cardAboutSx {
-        width: 100%;
-        border-right: none;
-        border-bottom: 2px solid var(--nero);
-    }
-
-    #cardAboutDx {
-        width: 100%;
-        border-top: 2px solid var(--nero);
-        border-left: none;
-    }
-
-    .bordo {
-        height: 100%;
-    }
-
-    .bordoDestra {
-        height: 100%;
-    }
-
     .contenitoreTitoloHeadingDue {
         padding-top: 72px;
         padding-bottom: 72px;
     }
 
-    #mainArtisti{
+    #mainArtisti {
         gap: 40px;
     }
 
@@ -1155,7 +1190,7 @@ iframe {
         border-bottom: 2px solid var(--nero);
     }
 
-    #mainArtisti .fasciaCardArtisti p{
+    #mainArtisti .fasciaCardArtisti p {
         font-size: 24px;
     }
 
@@ -1168,20 +1203,179 @@ iframe {
         border-left: none;
     }
 
-    #mainArtisti>div:last-of-type .fasciaCardArtisti{
+    #mainArtisti>div:last-of-type .fasciaCardArtisti {
         border-bottom: none;
     }
 
-    #mainArtisti>div:last-of-type{
+    #mainArtisti>div:last-of-type {
         border-top: 2px solid var(--nero);
     }
 
-    #sei form>div:first-of-type{
+    #sei form>div:first-of-type {
         margin-bottom: 30px;
+    }
+
+    /* about */
+    .contenitoreInfoAbout>div:nth-of-type(2) {
+        padding-inline: 64px;
+        padding-block: 24px;
+        border-left: none;
+        border-top: 2px solid var(--nero);
+    }
+
+    .contenitoreInfoAbout {
+        padding-inline: 0;
+    }
+
+    .contenitoreInfoAbout>div {
+        width: 100%;
+        padding-inline: 60px;
+    }
+
+    .contenitoreInfoAbout h2 {
+        padding-block: 72px;
+    }
+
+    .divisore {
+        height: 72px;
+    }
+
+    .swiper-slide {
+        width: 364px;
+    }
+
+    #heroAbout>div,
+    #heroEvents>div,
+    #heroArtists>div {
+        padding: 72px 60px;
     }
 
 }
 
-
 /* sotto i 576px (solo telefoni verticali) */
-@media (max-width: 575.98px) {}
+@media (max-width: 575.98px) {
+    p {
+        font-size: 16px !important;
+    }
+
+    /* home */
+
+    #button-hero {
+        padding: 26px 16px;
+    }
+
+    #cardAboutSx .button-about,
+    #cardAboutDx .button-about {
+        padding: 20px 32px;
+        height: auto;
+    }
+
+    #button-hero p {
+        font-size: 40px;
+    }
+
+    #uno .bg-body:nth-of-type(1) {
+        padding: 72px 16px;
+    }
+
+    #uno .bg-body:nth-of-type(2),
+    .pSec {
+        padding: 24px 16px;
+    }
+
+    #due .contenitoreTitolo,
+    .contenitoreTitoloHeadingDue {
+        padding: 72px 16px;
+    }
+
+    .bordo,
+    .bordoDestra,
+    .bordoArtistiSx,
+    .bordoArtistiDx,
+    .bordoEventsSx,
+    .bordoEventsDx {
+        width: 16px;
+    }
+
+    #due .swiper {
+        padding-left: 16px;
+    }
+
+    #contCardAbout {
+        padding-inline: 0;
+    }
+
+    .button-about p,
+    #cardAboutDx .button-about p {
+        font-size: 24px !important;
+    }
+
+    #mainArtisti {
+        margin: 0 16px;
+        width: calc(100% - 16px);
+    }
+
+    #mainArtisti>div {
+        width: calc(100% - 16px);
+    }
+
+    .fasciaCardArtisti {
+        padding: 20px 16px;
+    }
+
+    #mainArtisti .fasciaCardArtisti p {
+        font-size: 16px;
+    }
+
+    #sei {
+        padding: 72px 16px;
+    }
+
+    button {
+        padding: 16px 20px;
+        font-size: 24px;
+    }
+
+    input[type="email"] {
+        padding-left: 16px;
+    }
+
+    .logo {
+        width: 180px;
+    }
+
+    .menuMobile {
+        top: 56px;
+        right: 16px;
+        font-size: 32px !important;
+    }
+
+    /* about */
+    #heroAbout>div,
+    #heroEvents>div,
+    #heroArtists>div {
+        padding: 72px 16px;
+        width: 100%;
+    }
+
+    .contenitoreInfoAbout>div {
+        width: 100%;
+        padding-inline: 16px;
+    }
+
+    .contenitoreInfoAbout>div:nth-of-type(2) {
+        padding-inline: 16px;
+        padding-block: 24px;
+        border-left: none;
+        border-top: 2px solid var(--nero);
+    }
+
+    #galleryPrecedenti .contenitoreTitolo {
+        padding: 72px 16px;
+    }
+
+    #galleryPrecedenti .mySwiper {
+        padding-left: 16px;
+    }
+
+}

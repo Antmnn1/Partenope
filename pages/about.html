@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Partenope - Festival art</title>
+    <title>Partenope - About</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -20,9 +20,9 @@
         <nav class="position-absolute top-0 start-0 w-100">
             <div class="d-flex justify-content-between">
 
-                <div class="logo d-flex align-items-center justify-content-center"
-                    onclick="window.location.href='../index.html'">
-                    <img src="../assets/img/logo-desk.svg" alt="">
+                <div class="logo d-flex align-items-center justify-content-center" onclick="window.location.href='../index.html'">
+                    <img src="../assets/img/logo-desk.svg" alt="" id="logoDesk">
+                    <img src="../assets/img/logo-mobile.svg" alt="" class="d-none" id="logoMobile">
                 </div>
 
                 <div id="voci" class="bg-body">
@@ -35,7 +35,7 @@
                         <li><a href="">profile</a></li>
                     </ul>
                 </div>
-
+                <p class="menuMobile d-none">menu</p>
             </div>
         </nav>
     </header>
@@ -56,48 +56,48 @@
         <div class="divisore"></div>
 
         <section id="infoAbout">
-            <div class="d-flex align-items-center contenitoreInfoAbout">
+            <div class="d-flex flex-column flex-md-row align-items-md-center contenitoreInfoAbout">
                 <div>
                     <h2 class="m-0">WHAT IS THE
                         FESTIVAL?</h2>
                 </div>
                 <div class="d-flex align-items-center justify-content-center">
                     <p class="m-0">
-                        Partenope is a multidisciplinary creative festival that <br> brings together graphic designers,
+                        Partenope is a multidisciplinary creative festival that <br class="d-none d-xl-inline"> brings together graphic designers,
                         visual
-                        artists, and <br> innovative thinkers to explore contemporary visual <br> culture, share ideas,
+                        artists, and <br class="d-none d-xl-inline"> innovative thinkers to explore contemporary visual <br class="d-none d-xl-inline"> culture, share ideas,
                         and
                         create
-                        meaningful connections <br> through exhibitions, installations, talks, and collaborative <br>
+                        meaningful connections <br class="d-none d-xl-inline"> through exhibitions, installations, talks, and collaborative <br class="d-none d-xl-inline">
                         experiences.
                     </p>
                 </div>
             </div>
-            <div class="d-flex align-items-center contenitoreInfoAbout" style="border-top: none;">
+            <div class="d-flex flex-column flex-md-row align-items-md-center contenitoreInfoAbout" style="border-top: none;">
                 <div>
                     <h2 class="m-0">ORIGIN</h2>
                 </div>
                 <div class="d-flex align-items-center justify-content-center">
                     <p class="m-0">
-                        Partenope was born from a group of artists from Naples <br> who relocated to Amsterdam, bringing
+                        Partenope was born from a group of artists from Naples <br class="d-none d-xl-inline"> who relocated to Amsterdam, bringing
                         their
-                        cultural <br> heritage and creative vision with them. The festival <br> emerged as a space to
+                        cultural <br class="d-none d-xl-inline"> heritage and creative vision with them. The festival <br class="d-none d-xl-inline"> emerged as a space to
                         connect
-                        different communities, <br> disciplines, and perspectives through creativity.
+                        different communities, <br class="d-none d-xl-inline"> disciplines, and perspectives through creativity.
                     </p>
                 </div>
             </div>
-            <div class="d-flex align-items-center contenitoreInfoAbout" style="border-top: none;">
+            <div class="d-flex flex-column flex-md-row align-items-md-center contenitoreInfoAbout" style="border-top: none;">
                 <div>
                     <h2 class="m-0">MISSION</h2>
                 </div>
-                <div class="d-flex align-items-center justify-content-center">
+                <div class="d-md-flex align-items-center justify-content-center">
                     <p class="m-0">
-                        Partenope’s mission is to bring together diverse creative <br> voices, disciplines, and ideas,
+                        Partenope’s mission is to bring together diverse creative <br class="d-none d-xl-inline"> voices, disciplines, and ideas,
                         creating
-                        an open platform <br> where emerging and established talents can share their <br> work, connect
+                        an open platform <br class="d-none d-xl-inline"> where emerging and established talents can share their <br class="d-none d-xl-inline"> work, connect
                         with others,
-                        and inspire through collective <br> experiences.
+                        and inspire through collective <br class="d-none d-xl-inline"> experiences.
                     </p>
                 </div>
             </div>
@@ -121,11 +121,11 @@
 
         <div class="divisore"></div>
         <section id="sei">
-            <form action="" class="d-flex align-items-end justify-content-between">
+            <form action="" class="d-flex align-items-end justify-content-between flex-column flex-md-row">
                 <div class="d-flex flex-column w-100">
                     <p>Receive updates on new events, exhibitions <br>
                         and calls for proposals by subscribing to our newsletter.</p>
-                    <input type="email" placeholder="Email">
+                    <input type="email" placeholder="Email" name="email">
                     <button type="submit" class="d-flex align-items-center justify-content-between">Subscribe <img
                             src="../assets/img/arrow.svg" alt=""></button>
                 </div>
@@ -149,7 +149,7 @@
     <script src="../assets/js/index.js"></script>
     <script>
         var swiper = new Swiper('.mySwiper', {
-            slidesPerView: 3,
+            slidesPerView: 'auto',
             spaceBetween: 20,
             freeMode: true,
             pagination: {

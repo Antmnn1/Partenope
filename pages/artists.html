@@ -20,9 +20,9 @@
         <nav class="position-absolute top-0 start-0 w-100">
             <div class="d-flex justify-content-between">
 
-                <div class="logo d-flex align-items-center justify-content-center"
-                    onclick="window.location.href='../index.html'">
-                    <img src="../assets/img/logo-desk.svg" alt="">
+                <div class="logo d-flex align-items-center justify-content-center" onclick="window.location.href='../index.html'">
+                    <img src="../assets/img/logo-desk.svg" alt="" id="logoDesk">
+                    <img src="../assets/img/logo-mobile.svg" alt="" class="d-none" id="logoMobile">
                 </div>
 
                 <div id="voci" class="bg-body">
@@ -35,7 +35,7 @@
                         <li><a href="">profile</a></li>
                     </ul>
                 </div>
-
+                <p class="menuMobile d-none">menu</p>
             </div>
         </nav>
     </header>
@@ -82,11 +82,11 @@
         <div class="divisore"></div>
 
         <section id="sei">
-            <form action="" class="d-flex align-items-end justify-content-between">
+            <form action="" class="d-flex align-items-end justify-content-between flex-column flex-md-row">
                 <div class="d-flex flex-column w-100">
                     <p>Receive updates on new events, exhibitions <br>
                         and calls for proposals by subscribing to our newsletter.</p>
-                    <input type="email" placeholder="Email">
+                    <input type="email" placeholder="Email" name="email">
                     <button type="submit" class="d-flex align-items-center justify-content-between">Subscribe <img
                             src="../assets/img/arrow.svg" alt=""></button>
                 </div>
