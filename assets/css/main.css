@@ -1392,7 +1392,7 @@ iframe {
     }
 
     #button-hero p {
-        font-size: 40px;
+        font-size: 40px !important;
     }
 
     #uno .bg-body:nth-of-type(1) {
