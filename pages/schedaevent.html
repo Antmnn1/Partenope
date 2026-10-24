@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Partenope - Festival art</title>
+    <title>Partenope - Event</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -45,7 +45,7 @@
 
         <!-- hero -->
         <section id="heroSchedaEvento">
-            <div class="d-flex align-items-center gap-3">
+            <div class="d-flex flex-column flex-md-row align-items-sm-center gap-3">
                 <div><img src="../assets/img/back_arrow.svg" alt="Back" onclick="history.back()" style="cursor: pointer;"></div>
                 <div>
                     <h1 id="eventTitle"></h1>
@@ -59,7 +59,7 @@
                 <div class="bordoSinistraScheda"></div>
                 <div class="d-flex flex-column w-100">
                     <div class="contFiltri">
-                        <div class="filtri d-flex">
+                        <div class="filtri d-flex flex-column flex-xl-row">
                             <div class="d-flex">
                                 <span class="titoloFiltro">Data e ora:</span>
                                 <span id="eventDateTime"></span>
@@ -104,11 +104,11 @@
         </section>
 
         <section id="sei">
-            <form action="" class="d-flex align-items-end justify-content-between">
+            <form action="" class="d-flex align-items-end justify-content-between flex-column flex-md-row">
                 <div class="d-flex flex-column w-100">
                     <p>Receive updates on new events, exhibitions <br>
                         and calls for proposals by subscribing to our newsletter.</p>
-                    <input type="email" placeholder="Email">
+                    <input type="email" placeholder="Email" name="email">
                     <button type="submit" class="d-flex align-items-center justify-content-between">Subscribe <img
                             src="../assets/img/arrow.svg" alt=""></button>
                 </div>
