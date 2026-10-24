@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 
-<body>
+<body id="contactPage">
 
     <!-- HEADER -->
     <header>
@@ -46,11 +46,11 @@
         <!-- hero -->
         <section id="heroContact">
 
-            <div class="d-flex">
+            <div class="d-lg-flex">
                 <div>
                     <h1>CONTACT</h1>
                 </div>
-                <div>
+                <div class="d-none d-lg-inline">
 
                 </div>
             </div>
@@ -60,7 +60,7 @@
         <div class="divisore"></div>
 
         <section>
-            <div class="d-flex position-relative">
+            <div class="d-flex flex-column flex-lg-row position-relative">
                 <div id="zonaForm">
                     <div>
                         <h2>GET IN TOUCH</h2>
@@ -68,7 +68,7 @@
                             <input type="text" name="" id="" placeholder="Name">
                             <input type="text" name="" id="" placeholder="Surname">
                             <input type="email" name="" id="" placeholder="Email Address">
-                            <input type="text" name="" id="" placeholder="Write your message here...">
+                            <textarea name="message" id="message" rows="5" placeholder="Write your message here..."></textarea>
                             <button type="submit" class="d-flex align-items-center justify-content-between">Send <img
                                     src="../assets/img/arrow.svg" alt=""></button>
                         </form>
@@ -154,11 +154,11 @@
         </section>
 
         <section id="sei">
-            <form action="" class="d-flex align-items-end justify-content-between">
+            <form action="" class="d-flex align-items-end justify-content-between flex-column flex-md-row">
                 <div class="d-flex flex-column w-100">
                     <p>Receive updates on new events, exhibitions <br>
                         and calls for proposals by subscribing to our newsletter.</p>
-                    <input type="email" placeholder="Email">
+                    <input type="email" placeholder="Email" name="email">
                     <button type="submit" class="d-flex align-items-center justify-content-between">Subscribe <img
                             src="../assets/img/arrow.svg" alt=""></button>
                 </div>

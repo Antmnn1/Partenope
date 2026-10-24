@@ -584,12 +584,12 @@ form p {
     padding-bottom: 32px;
 }
 
-form input {
+form input, textarea {
     border: var(--linea);
 }
 
 input[type="email"],
-#zonaForm input[type="text"] {
+#zonaForm input[type="text"],textarea {
     width: 100%;
     height: 57px;
     padding-left: 40px;
@@ -599,12 +599,17 @@ input[type="email"],
     font-weight: 400;
 }
 
-input::placeholder {
+textarea{
+    height: fit-content;
+    padding-top: 8px;
+}
+
+input::placeholder, textarea::placeholder {
     color: #bbbbbb;
 }
 
 input:focus,
-.accordion-button:focus {
+.accordion-button:focus, textarea {
     outline: none;
 }
 
@@ -1052,7 +1057,8 @@ iframe {
         padding-block: 10px;
     }
 
-    img[src="assets/img/arrow.svg"] {
+    img[src="assets/img/arrow.svg"],
+    img[src="../assets/img/arrow.svg"] {
         width: 25px;
         height: 25px;
     }
@@ -1064,9 +1070,18 @@ iframe {
         right: 40px;
     }
 
+    #contactPage .menuMobile {
+        color: var(--rosso);
+    }
+
     /* about */
     .contenitoreInfoAbout>div:nth-of-type(2) {
         padding-left: 96px;
+    }
+
+    /* events */
+    #contenitoreEvents .filtri>div:nth-child(1) {
+        margin-bottom: 30px;
     }
 }
 
@@ -1125,6 +1140,97 @@ iframe {
 
     .bordoDestra {
         height: 100%;
+    }
+
+    /* artists */
+    #mainArtisti>div {
+        width: calc((100% - 40px) / 2);
+    }
+
+    #mainArtisti {
+        justify-content: space-between;
+    }
+
+    #mainArtisti>div:nth-child(odd) {
+        border: 2px solid var(--nero);
+        border-left: none !important;
+    }
+
+    #mainArtisti>div:nth-child(even) {
+        border: 2px solid var(--nero);
+        border-right: none;
+    }
+
+    #mainArtisti>div:nth-child(even) img,
+    #mainArtisti>div:nth-child(even) .fasciaCardArtisti,
+    #mainArtisti>div:nth-child(odd) img,
+    #mainArtisti>div:nth-child(odd) .fasciaCardArtisti {
+        border-right: none !important;
+    }
+
+    #mainArtisti>div:nth-child(1) {
+        border-top: none;
+    }
+
+    #mainArtisti>div:nth-child(2) {
+        border-top: none;
+    }
+
+    #contenitoreArtisti .contFiltri {
+        padding: 60px 60px 30px 60px;
+    }
+
+    #contenitoreArtisti .filri {
+        gap: 8px;
+    }
+
+    #contenitoreArtisti .filtri span {
+        display: inline-block;
+        margin: 0 30px 30px 0;
+    }
+
+    /* events */
+    #contenitoreEvents .contFiltri {
+        padding: 60px;
+    }
+
+    /* contact */
+    #heroContact>div>div {
+        width: 100%;
+    }
+
+    #zonaForm {
+        width: 100%;
+    }
+
+    #zonaMappa,
+    #zonaMappa #mappa {
+        height: fit-content;
+    }
+
+    iframe {
+        height: 450px;
+    }
+
+    .divisore {
+        height: 72px;
+    }
+
+    .bordoDestraMappa {
+        border-top: none;
+    }
+
+    #zonaMappa>div:first-of-type p {
+        font-size: 20px;
+    }
+
+    #zonaMappa>div:first-of-type {
+        border-left: 2px solid var(--nero);
+        border-right: 2px solid var(--nero);
+    }
+
+    #zonaMappa {
+        order: -1;
     }
 }
 
@@ -1247,6 +1353,21 @@ iframe {
     #heroAbout>div,
     #heroEvents>div,
     #heroArtists>div {
+        padding: 72px 60px;
+    }
+
+    #button-hero p {
+        font-size: 40px !important;
+    }
+
+    #mainArtisti>div {
+        border-right: none !important;
+        border-bottom: none !important;
+        border-left: none !important;
+    }
+
+    /* contact */
+    #zonaForm {
         padding: 72px 60px;
     }
 
@@ -1376,6 +1497,52 @@ iframe {
 
     #galleryPrecedenti .mySwiper {
         padding-left: 16px;
+    }
+
+    /* artists */
+    .contFiltri {
+        margin: 0 16px;
+        width: calc(100% - 30px);
+        padding: 32px 16px 16px 16px;
+    }
+
+    #contenitoreArtisti .filtri span {
+        margin: 0 30px 16px 0;
+    }
+
+    /* events */
+    #contenitoreEvents .contFiltri {
+        padding: 32px 16px;
+    }
+
+    #appendTickets {
+        width: calc(100% - 32px);
+    }
+
+    /* contact */
+    #heroContact h1 {
+        padding: 72px 16px;
+    }
+
+    #zonaMappa p {
+        padding: 24px 16px;
+        font-size: 16px
+    }
+
+    iframe {
+        height: 350px;
+    }
+
+    #zonaForm {
+        padding: 24px 16px;
+    }
+
+    input[type="text"], textarea {
+        padding-left: 16px !important;
+    }
+
+    #zonaForm h2 {
+        padding-bottom: 24px;
     }
 
 }
