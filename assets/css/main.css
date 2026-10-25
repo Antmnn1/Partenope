@@ -51,6 +51,47 @@ p {
     margin: 0;
 }
 
+footer {
+    background-color: #FF0000;
+    color: var(--bianco);
+    border: 2px solid var(--nero);
+    font-size: 24px;
+}
+
+.vociFooter {
+    padding: 40px 60px;
+}
+
+footer ul li {
+    margin-right: 40px;
+}
+
+footer>div>div:nth-child(2) {
+    border-top: 2px solid var(--nero);
+    border-bottom: 2px solid var(--nero);
+}
+
+.social,
+.copy,
+.privacy {
+    padding: 40px 60px;
+    border-left: 2px solid var(--nero);
+}
+
+.logoFooter {
+    padding: 40px 0;
+    cursor: pointer;
+}
+
+.logoFooter h6 {
+    font-size: 15vw;
+    font-weight: bold;
+    color: var(--bianco);
+    line-height: 1;
+    margin: 0;
+    overflow: hidden;
+}
+
 
 /* altro */
 
@@ -198,6 +239,11 @@ form p,
     text-decoration: none;
     color: var(--nero);
     font-size: 24px;
+}
+
+footer li a{
+    text-decoration: none;
+    color: var(--bianco);
 }
 
 #voci li a:hover {
@@ -1109,6 +1155,19 @@ iframe {
     .sfondoEvento .plusTicket {
         height: 230px;
     }
+
+    /* footer */
+
+    .social,
+    .copy,
+    .privacy {
+        border-left: none;
+    }
+
+    .copy {
+        border-top: 2px solid var(--nero);
+        border-bottom: 2px solid var(--nero);
+    }
 }
 
 /* sotto i 992px */
@@ -1434,6 +1493,22 @@ iframe {
         height: 150px;
     }
 
+    /* footer */
+    footer {
+        font-size: 20px;
+    }
+
+    .vociFooter,
+    .social,
+    .copy,
+    .privacy {
+        padding: 20px 40px;
+    }
+
+    .logoFooter {
+        padding: 20px 0;
+    }
+
 }
 
 /* sotto i 576px (solo telefoni verticali) */
@@ -1658,6 +1733,17 @@ iframe {
     .sfondoEvento .plusTicket {
         width: 150px;
         height: 150px;
+    }
+
+    footer ul li {
+        margin-right: 20px;
+    }
+
+    .vociFooter,
+    .social,
+    .copy,
+    .privacy {
+        padding: 20px 16px;
     }
 
 }
