@@ -20,7 +20,8 @@
         <nav class="position-absolute top-0 start-0 w-100">
             <div class="d-flex justify-content-between">
 
-                <div class="logo d-flex align-items-center justify-content-center" onclick="window.location.href='../index.html'">
+                <div class="logo d-flex align-items-center justify-content-center"
+                    onclick="window.location.href='../index.html'">
                     <img src="../assets/img/logo-desk.svg" alt="" id="logoDesk">
                     <img src="../assets/img/logo-mobile.svg" alt="" class="d-none" id="logoMobile">
                 </div>
@@ -62,15 +63,15 @@
                 <div class="d-flex flex-column w-100">
                     <div class="contFiltri">
                         <div class="filtri d-lg-flex">
-                                <span class="titoloFiltro">Type:</span>
-                                <span>All</span>
-                                <span>Visual artists</span> <br class="d-lg-none">
-                                <span>Photographers</span>
-                                <span>Sound artists</span>
+                            <span class="titoloFiltro">Type:</span>
+                            <span class="attivo" data-artista="all">All</span>
+                            <span data-artista="Visual artist">Visual artists</span> <br class="d-lg-none">
+                            <span data-artista="Photographer">Photographers</span>
+                            <span data-artista="Sound artist">Sound artists</span>
                         </div>
                     </div>
                     <div class="d-flex flex-wrap" id="mainArtisti">
-                        
+
                     </div>
                 </div>
                 <div class="bordoEventsDx"></div>

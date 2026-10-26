@@ -20,7 +20,8 @@
         <nav class="position-absolute top-0 start-0 w-100">
             <div class="d-flex justify-content-between">
 
-                <div class="logo d-flex align-items-center justify-content-center" onclick="window.location.href='../index.html'">
+                <div class="logo d-flex align-items-center justify-content-center"
+                    onclick="window.location.href='../index.html'">
                     <img src="../assets/img/logo-desk.svg" alt="" id="logoDesk">
                     <img src="../assets/img/logo-mobile.svg" alt="" class="d-none" id="logoMobile">
                 </div>
@@ -64,21 +65,21 @@
                         <div class="filtri d-xl-flex">
                             <div class="d-flex flex-wrap">
                                 <span class="titoloFiltro">Day:</span>
-                                <span class="">All</span>
-                                <span class="">03</span>
-                                <span class="">04</span>
-                                <span class="">05</span>
-                                <span class="">06</span>
-                                <span class="">07</span>
-                                <span class="">08</span>
+                                <span class="attivo" data-filtro="giorno" data-valore="all">All</span>
+                                <span data-filtro="giorno" data-valore="03">03</span>
+                                <span data-filtro="giorno" data-valore="04">04</span>
+                                <span data-filtro="giorno" data-valore="05">05</span>
+                                <span data-filtro="giorno" data-valore="06">06</span>
+                                <span data-filtro="giorno" data-valore="07">07</span>
+                                <span data-filtro="giorno" data-valore="08">08</span>
                             </div>
                             <div class="d-flex flex-wrap">
                                 <span class="titoloFiltro">Type:</span>
-                                <span class="">All</span>
-                                <span class="">Talks</span>
-                                <span class="">Workshop</span>
-                                <span class="">Performances</span>
-                                <span class="">installations</span>
+                                <span class="attivo" data-filtro="tipo" data-valore="all">All</span>
+                                <span data-filtro="tipo" data-valore="talk">Talks</span>
+                                <span data-filtro="tipo" data-valore="workshop">Workshop</span>
+                                <span data-filtro="tipo" data-valore="performance">Performances</span>
+                                <span data-filtro="tipo" data-valore="installation">installations</span>
                             </div>
                         </div>
                     </div>

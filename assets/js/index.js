@@ -43,6 +43,8 @@ class TicketsHome {
     constructor(id, dataTitolo, ora, nomeEvento, artisti, prezzo, img, imgEvento) {
         this.id = id
         this.dataTitolo = dataTitolo
+        this.giorno = dataTitolo.split('.')[0]
+        this.tipo = dataTitolo.split(' ')[1].toLowerCase()
         this.ora = ora
         this.nomeEvento = nomeEvento
         this.artisti = artisti
@@ -241,4 +243,139 @@ if (contArtisti && document.querySelector('#heroArtists')) {
         `
         contArtisti.append(div)
     }
+}
+
+/* inserire tickets con filtri */
+function mostraTickets(lista) {
+    contenitoreT.innerHTML = ''
+
+    for (let ticket of lista) {
+        let div = document.createElement('div')
+        div.classList.add('d-flex')
+        div.id = 'contenitoreTickets'
+        div.dataset.eventId = ticket.id
+
+        div.addEventListener('click', () => {
+            window.location.href = `schedaevent.html?id=${ticket.id}`
+        })
+
+        div.innerHTML = `
+            <div class="imgTicket">
+                <img src="../${ticket.img}" alt="" class="w-100">
+            </div>
+
+            <div class="Ticket">
+                <div class="redBar d-flex justify-content-center align-items-center">
+                    <p>${ticket.dataTitolo}</p>
+                </div>
+
+                <div class="bodyTicket">
+                    <div class="d-flex flex-column justify-content-center align-items-center">
+                        <h3>${ticket.nomeEvento}</h3>
+                        <p>${ticket.artisti}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="plusTicket d-flex flex-column">
+                <div class="d-flex justify-content-center align-items-center">
+                    <p>${ticket.prezzo === 'FREE' ? 'FREE' : ticket.prezzo + ' €'}</p>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-center">
+                    <img src="../assets/img/plus.svg" alt="" width="72px" height="72px">
+                </div>
+            </div>
+        `
+
+        contenitoreT.append(div)
+    }
+}
+
+/* filtri */
+
+let filtroGiorno = 'all'
+let filtroTipo = 'all'
+
+let spanFiltri = document.querySelectorAll('.filtri span[data-valore]')
+
+for (let span of spanFiltri) {
+    span.addEventListener('click', () => {
+
+        if (span.dataset.filtro === 'giorno') {
+            filtroGiorno = span.dataset.valore
+        } else {
+            filtroTipo = span.dataset.valore
+        }
+
+        let gruppo = span.dataset.filtro
+
+        for (let s of spanFiltri) {
+            if (s.dataset.filtro === gruppo) {
+                s.classList.remove('attivo')
+            }
+        }
+
+        span.classList.add('attivo')
+
+        let filtrati = ticketEvents.filter(ticket => {
+            let giornoOk = filtroGiorno === 'all' || ticket.giorno === filtroGiorno
+            let tipoOk = filtroTipo === 'all' || ticket.tipo === filtroTipo
+            return giornoOk && tipoOk
+        })
+
+        mostraTickets(filtrati)
+    })
+}
+
+/* card artisti filtrati*/
+
+function mostraArtisti(lista) {
+    contArtisti.innerHTML = ''
+
+    for (let card of lista) {
+        let div = document.createElement('div')
+        div.classList.add('d-flex', 'flex-column')
+
+        div.addEventListener('click', () => {
+            window.location.href = `schedaartist.html?id=${card.id}`
+        })
+
+        div.innerHTML = `
+            <div>
+                <img src="${card.img}" alt="" class="w-100">
+            </div>
+            <div class="d-flex justify-content-between fasciaCardArtisti">
+                <div class="d-flex flex-column">
+                    <p>${card.nome}</p>
+                    <p>${card.tipo}</p>
+                </div>
+                <div><img src="../assets/img/arrow.svg" alt=""></div>
+            </div>
+        `
+        contArtisti.append(div)
+    }
+}
+
+/* filtri artisti */
+
+let spanArtisti = document.querySelectorAll('.filtri span[data-artista]')
+
+for (let span of spanArtisti) {
+    span.addEventListener('click', () => {
+
+        for (let s of spanArtisti) {
+            s.classList.remove('attivo')
+        }
+        span.classList.add('attivo')
+
+        let valore = span.dataset.artista
+
+        if (valore === 'all') {
+            mostraArtisti(cardsartisti)
+        } else {
+            let filtrati = cardsartisti.filter(card => card.tipo === valore)
+            mostraArtisti(filtrati)
+        }
+    })
 }

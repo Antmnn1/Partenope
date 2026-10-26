@@ -12,7 +12,7 @@
 
 @font-face {
     font-family: "Helvetica Now Display";
-    src: url("./fonts/HelveticaNowDisplay-Regular.otf") format("opentype");
+    src: url("./HelveticaNowDisplay-Regular.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
 }
@@ -90,6 +90,10 @@ footer>div>div:nth-child(2) {
     line-height: 1;
     margin: 0;
     overflow: hidden;
+}
+
+.filtri span.attivo {
+    font-weight: bold;
 }
 
 
@@ -241,7 +245,7 @@ form p,
     font-size: 24px;
 }
 
-footer li a{
+footer li a {
     text-decoration: none;
     color: var(--bianco);
 }
