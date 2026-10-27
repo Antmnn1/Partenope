@@ -96,6 +96,10 @@ footer>div>div:nth-child(2) {
     font-weight: bold;
 }
 
+.testoFocus{
+    color: var(--rosso) !important;
+}
+
 
 /* altro */
 
@@ -340,12 +344,18 @@ footer li a {
     bottom: 0;
     width: 100%;
     height: 80px;
-    padding: 0 60px;
+    padding: 20px 60px;
     background-color: var(--rosso);
+}
+
+#cardAboutSx .button-about,
+#cardAboutDx .button-about {
+    padding: 20px 40px;
 }
 
 #button-hero {
     border: var(--linea);
+    height: fit-content;
 }
 
 #button-hero p {
@@ -374,21 +384,30 @@ footer li a {
     opacity: 1;
 }
 
-.offcanvas-body ul{
+.offcanvas-body ul {
     margin-bottom: 0;
 }
 
-.offcanvas-body ul li{
+.offcanvas-body ul li {
     border-bottom: 2px solid var(--rosso);
 }
-.offcanvas-body ul li:first-of-type{
+
+.offcanvas-body ul li:first-of-type {
     border-top: 2px solid var(--rosso);
 }
 
-.offcanvas-body ul li a{
+.offcanvas-body ul li a {
     text-decoration: none;
     color: red;
     font-size: 48px;
+}
+
+.offcanvas .btn-close {
+    background-image: url("../img/close.svg");
+    opacity: 1;
+    width: 40px;
+    height: 40px;
+    padding: 0;
 }
 
 /* news */
@@ -434,7 +453,7 @@ footer li a {
 }
 
 #due .swiper-slide {
-    min-width: 300px;
+    min-width: 350px;
     margin-right: 0 !important;
 }
 
@@ -531,6 +550,7 @@ footer li a {
 #cardAboutSx .button-about,
 #cardAboutDx .button-about {
     border-top: var(--linea);
+    height: fit-content;
 }
 
 .button-about p {
@@ -625,10 +645,14 @@ footer li a {
 .fasciaCardArtisti {
     flex: 1;
     align-items: center;
-    padding: 20px;
+    padding: 20px 40px;
     background-color: var(--rosso);
     border-top: var(--linea);
     border-right: var(--linea);
+}
+
+.fasciaCardArtisti>div:first-of-type>p:first-of-type{
+    font-weight: bold !important;
 }
 
 .fasciaCardArtisti>div:first-of-type {
@@ -678,8 +702,7 @@ input[type="email"],
 #zonaForm input[type="text"],
 textarea {
     width: 100%;
-    height: 57px;
-    padding-left: 40px;
+    padding: 20px 40px;
     border-bottom: none;
     font-family: 'Helvetica Now Display';
     font-size: 24px;
@@ -702,17 +725,17 @@ textarea {
     outline: none;
 }
 
+.accordion-item:not(.accordion-item:last-of-type){
+    border: none;
+    border-bottom: 2px solid var(--nero);
+}
+
 button {
     padding: 20px 40px;
     color: var(--bianco);
     font-size: 32px;
     font-weight: bold;
     border: var(--linea);
-}
-
-button img {
-    width: 24px;
-    height: auto;
 }
 
 form button,
@@ -1064,33 +1087,33 @@ iframe {
 }
 
 /* tickets mobile */
-.etichettaMobile{
+.etichettaMobile {
     background-color: #FF0000;
     color: var(--bianco);
     padding-block: 15px;
 }
 
-.bodyTicketMobile{
+.bodyTicketMobile {
     border-top: 2px solid var(--nero);
     border-bottom: 2px solid var(--nero);
     padding-block: 24px;
     gap: 16px;
 }
 
-.bodyTicketMobile h3{
+.bodyTicketMobile h3 {
     font-size: 32px;
     font-weight: bold;
 }
 
-.moreEshop>div{
+.moreEshop>div {
     padding-block: 24px;
 }
 
-.moreEshop:not(#schedaEvento .moreEshop){
+.moreEshop:not(#schedaEvento .moreEshop) {
     border-bottom: 2px solid var(--nero);
 }
 
-.moreEshop>div:first-of-type{
+.moreEshop>div:first-of-type {
     border-right: 2px solid var(--nero);
 }
 
@@ -1182,8 +1205,8 @@ iframe {
 
     img[src="assets/img/arrow.svg"],
     img[src="../assets/img/arrow.svg"] {
-        width: 25px;
-        height: 25px;
+        width: 30px;
+        height: auto;
     }
 
     .menuMobile {
@@ -1501,7 +1524,7 @@ iframe {
     }
 
     .swiper-slide {
-        width: 364px;
+        width: 100%;
     }
 
     #heroAbout>div,
@@ -1589,12 +1612,12 @@ iframe {
     /* home */
 
     #button-hero {
-        padding: 26px 16px;
+        padding: 26px 20px;
     }
 
     #cardAboutSx .button-about,
     #cardAboutDx .button-about {
-        padding: 20px 32px;
+        padding: 20px 40px;
         height: auto;
     }
 
@@ -1648,7 +1671,7 @@ iframe {
     }
 
     .fasciaCardArtisti {
-        padding: 20px 16px;
+        padding: 20px 20px;
     }
 
     #mainArtisti .fasciaCardArtisti p {
@@ -1727,6 +1750,14 @@ iframe {
     }
 
     /* contact */
+
+    input[type="email"],
+    #zonaForm input[type="text"],
+    textarea {
+        width: 100%;
+        padding: 16px 20px;
+    }
+
     #heroContact h1 {
         padding: 72px 16px;
     }
