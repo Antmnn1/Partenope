@@ -35,52 +35,19 @@ prezzo.textContent = selectedEvent.prezzo == "FREE" ? "FREE" : selectedEvent.pre
 const sfondoEvento = document.querySelector('.sfondoEvento')
 sfondoEvento.style.backgroundImage = `url(../${selectedEvent.imgEvento.replace(/^(\.\.\/)+/, '')})`
 
+
+// SEE ALSO: ticket della stessa categoria, escluso quello che sto guardando
 const contenitoreTi = document.querySelector('#seeAlsoTickets')
 
-for (let ticket of ticketEvents) {
-    ticketSplit = ticket.dataTitolo.split(' ')
-    let categoriaDue = ticketSplit[1]
+const simili = ticketEvents.filter(ticket => {
+    let categoriaDue = ticket.dataTitolo.split(' ')[1]
+    return categoriaDue === category && ticket.nomeEvento !== selectedEvent.nomeEvento
+})
 
-    if (categoriaDue === category && ticket.nomeEvento !== selectedEvent.nomeEvento) {
-        let div = document.createElement('div')
-        div.classList.add('contenitoreTicketsSeeAlso', 'd-flex')
-        div.dataset.eventId = ticket.id
+// disegna i ticket giusti per la larghezza attuale (true = sono quelli "See also")
+disegnaTickets(contenitoreTi, simili, true)
 
-        div.addEventListener('click', () => {
-            window.location.href = `schedaevent.html?id=${ticket.id}`
-        })
-
-        const percorsoImmagine = `../${ticket.img.replace(/^(\.\.\/)+/, '')}`
-
-        div.innerHTML = `
-            <div class="imgTicket">
-                <img src="${percorsoImmagine}" alt="" class="w-100">
-            </div>
-
-            <div class="Ticket">
-                <div class="redBar d-flex justify-content-center align-items-center">
-                    <p>${ticket.dataTitolo}</p>
-                </div>
-
-                <div class="bodyTicket">
-                    <div class="d-flex flex-column justify-content-center align-items-center">
-                        <h3>${ticket.nomeEvento}</h3>
-                        <p>${ticket.artisti}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="plusTicket d-flex flex-column">
-                <div class="d-flex justify-content-center align-items-center">
-                    <p>${ticket.prezzo === 'FREE' ? 'FREE' : ticket.prezzo + ' €'}</p>
-                </div>
-
-                <div class="d-flex align-items-center justify-content-center">
-                    <img src="../assets/img/plus.svg" alt="" width="72px" height="72px">
-                </div>
-            </div>
-        `
-
-        contenitoreTi.append(div)
-    }
-}
+// quando la finestra attraversa i 992px ridisegno
+mqDesktop.addEventListener('change', () => {
+    disegnaTickets(contenitoreTi, simili, true)
+})

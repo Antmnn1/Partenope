@@ -69,93 +69,132 @@ let tickets = [ticket1, ticket2, ticket3]
 let ticketEvents = [ticket1, ticket2, ticket3, ticket4, ticket5, ticket6, ticket7, ticket8, ticket9, ticket10]
 let contenitoreT = document.querySelector('#appendTickets')
 
+
+/* funzioni per disegnare i tickets (home, events, scheda evento) */
+
+// percorsi: nelle pagine dentro /pages/ servono "../" e il link cambia
+const inPages = window.location.pathname.includes('/pages/')
+const base = inPages ? '../' : ''
+const paginaScheda = inPages ? 'schedaevent.html' : 'pages/schedaevent.html'
+
+// true quando la finestra è larga almeno 992px
+let mqDesktop = window.matchMedia('(min-width: 992px)')
+
+// lista attualmente mostrata nella pagina events (tutti i ticket o quelli filtrati)
+let listaCorrente = ticketEvents
+
+function creaTicketDesktop(ticket, seeAlso = false) {
+    let div = document.createElement('div')
+    div.classList.add('d-flex')
+
+    if (seeAlso) {
+        div.classList.add('contenitoreTicketsSeeAlso')
+    } else {
+        div.id = 'contenitoreTickets'
+    }
+
+    div.dataset.eventId = ticket.id
+
+    div.addEventListener('click', () => {
+        window.location.href = `${paginaScheda}?id=${ticket.id}`
+    })
+
+    div.innerHTML = `
+        <div class="imgTicket">
+            <img src="${base}${ticket.img}" alt="" class="w-100">
+        </div>
+
+        <div class="Ticket">
+            <div class="redBar d-flex justify-content-center align-items-center">
+                <p>${ticket.dataTitolo}</p>
+            </div>
+
+            <div class="bodyTicket">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <h3>${ticket.nomeEvento}</h3>
+                    <p>${ticket.artisti}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="plusTicket d-flex flex-column">
+            <div class="d-flex justify-content-center align-items-center">
+                <p>${ticket.prezzo === 'FREE' ? 'FREE' : ticket.prezzo + ' €'}</p>
+            </div>
+
+            <div class="d-flex align-items-center justify-content-center">
+                <img src="${base}assets/img/plus.svg" alt="" width="72px" height="72px">
+            </div>
+        </div>
+    `
+    return div
+}
+
+function creaTicketMobile(ticket, seeAlso = false) {
+    let div = document.createElement('div')
+    div.classList.add('ticketMobile', 'w-100', 'd-flex', 'flex-column')
+
+    if (seeAlso) {
+        div.classList.add('contenitoreTicketsSeeAlso')
+    }
+
+    div.dataset.eventId = ticket.id
+
+    div.addEventListener('click', () => {
+        window.location.href = `${paginaScheda}?id=${ticket.id}`
+    })
+
+    let prezzo = ticket.prezzo === 'FREE'
+        ? 'FREE'
+        : ticket.prezzo.toFixed(2).replace('.', ',') + '€'
+
+    div.innerHTML = `
+        <div class="etichettaMobile d-flex justify-content-around">
+            <p>${ticket.dataTitolo}</p>
+            <p>${prezzo}</p>
+        </div>
+        <div class="bodyTicketMobile d-flex flex-column align-items-center">
+            <h3>${ticket.nomeEvento}</h3>
+            <p>${ticket.artisti}</p>
+        </div>
+        <div class="moreEshop d-flex">
+            <div class="w-50 d-flex align-items-center justify-content-center">
+                <img src="${base}assets/img/arrow_ticket_mobile.svg" alt="">
+            </div>
+            <div class="w-50 d-flex align-items-center justify-content-center">
+                <img src="${base}assets/img/plus_mobile.svg" alt="">
+            </div>
+        </div>
+    `
+    return div
+}
+
+// funzione generale: svuota un contenitore e ci mette i ticket giusti per la larghezza attuale
+function disegnaTickets(destinazione, lista, seeAlso = false) {
+    destinazione.innerHTML = ''
+
+    for (let ticket of lista) {
+        if (mqDesktop.matches) {
+            destinazione.append(creaTicketDesktop(ticket, seeAlso))
+        } else {
+            destinazione.append(creaTicketMobile(ticket, seeAlso))
+        }
+    }
+}
+
+// usata dalla pagina events e dai filtri
+function mostraTickets(lista) {
+    listaCorrente = lista
+    disegnaTickets(contenitoreT, lista)
+}
+
+// HOME:  3 tickets
 if (contenitoreT && !document.querySelector('#heroEvents')) {
+    disegnaTickets(contenitoreT, tickets)
 
-    for (let ticket of tickets) {
-        let div = document.createElement('div')
-        div.classList.add('d-flex')
-        div.id = 'contenitoreTickets'
-        div.dataset.eventId = ticket.id
-
-        div.addEventListener('click', () => {
-            window.location.href = `pages/schedaevent.html?id=${ticket.id}`
-        })
-
-        div.innerHTML = `
-            <div class="imgTicket">
-                <img src="${ticket.img}" alt="" class="w-100">
-            </div>
-
-            <div class="Ticket">
-                <div class="redBar d-flex justify-content-center align-items-center">
-                    <p>${ticket.dataTitolo}</p>
-                </div>
-
-                <div class="bodyTicket">
-                    <div class="d-flex flex-column justify-content-center align-items-center">
-                        <h3>${ticket.nomeEvento}</h3>
-                        <p>${ticket.artisti}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="plusTicket d-flex flex-column">
-                <div class="d-flex justify-content-center align-items-center">
-                    <p>${ticket.prezzo === 'FREE' ? 'FREE' : ticket.prezzo + ' €'}</p>
-                </div>
-
-                <div class="d-flex align-items-center justify-content-center">
-                    <img src="assets/img/plus.svg" alt="" width="72px" height="72px">
-                </div>
-            </div>
-        `
-
-        contenitoreT.append(div)
-    }
-
-} else if (contenitoreT && document.querySelector('#heroEvents')) {
-
-    for (let ticket of ticketEvents) {
-        let div = document.createElement('div')
-        div.classList.add('d-flex')
-        div.id = 'contenitoreTickets'
-        div.dataset.eventId = ticket.id
-
-        div.addEventListener('click', () => {
-            window.location.href = `schedaevent.html?id=${ticket.id}`
-        })
-
-        div.innerHTML = `
-            <div class="imgTicket">
-                <img src="../${ticket.img}" alt="" class="w-100">
-            </div>
-
-            <div class="Ticket">
-                <div class="redBar d-flex justify-content-center align-items-center">
-                    <p>${ticket.dataTitolo}</p>
-                </div>
-
-                <div class="bodyTicket">
-                    <div class="d-flex flex-column justify-content-center align-items-center">
-                        <h3>${ticket.nomeEvento}</h3>
-                        <p>${ticket.artisti}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="plusTicket d-flex flex-column">
-                <div class="d-flex justify-content-center align-items-center">
-                    <p>${ticket.prezzo === 'FREE' ? 'FREE' : ticket.prezzo + ' €'}</p>
-                </div>
-
-                <div class="d-flex align-items-center justify-content-center">
-                    <img src="../assets/img/plus.svg" alt="" width="72px" height="72px">
-                </div>
-            </div>
-        `
-
-        contenitoreT.append(div)
-    }
+    mqDesktop.addEventListener('change', () => {
+        disegnaTickets(contenitoreT, tickets)
+    })
 }
 
 
@@ -245,52 +284,6 @@ if (contArtisti && document.querySelector('#heroArtists')) {
     }
 }
 
-/* inserire tickets con filtri */
-function mostraTickets(lista) {
-    contenitoreT.innerHTML = ''
-
-    for (let ticket of lista) {
-        let div = document.createElement('div')
-        div.classList.add('d-flex')
-        div.id = 'contenitoreTickets'
-        div.dataset.eventId = ticket.id
-
-        div.addEventListener('click', () => {
-            window.location.href = `schedaevent.html?id=${ticket.id}`
-        })
-
-        div.innerHTML = `
-            <div class="imgTicket">
-                <img src="../${ticket.img}" alt="" class="w-100">
-            </div>
-
-            <div class="Ticket">
-                <div class="redBar d-flex justify-content-center align-items-center">
-                    <p>${ticket.dataTitolo}</p>
-                </div>
-
-                <div class="bodyTicket">
-                    <div class="d-flex flex-column justify-content-center align-items-center">
-                        <h3>${ticket.nomeEvento}</h3>
-                        <p>${ticket.artisti}</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="plusTicket d-flex flex-column">
-                <div class="d-flex justify-content-center align-items-center">
-                    <p>${ticket.prezzo === 'FREE' ? 'FREE' : ticket.prezzo + ' €'}</p>
-                </div>
-
-                <div class="d-flex align-items-center justify-content-center">
-                    <img src="../assets/img/plus.svg" alt="" width="72px" height="72px">
-                </div>
-            </div>
-        `
-
-        contenitoreT.append(div)
-    }
-}
 
 /* filtri */
 
@@ -327,6 +320,7 @@ for (let span of spanFiltri) {
         mostraTickets(filtrati)
     })
 }
+
 
 /* card artisti filtrati*/
 
@@ -377,5 +371,18 @@ for (let span of spanArtisti) {
             let filtrati = cardsartisti.filter(card => card.tipo === valore)
             mostraArtisti(filtrati)
         }
+    })
+}
+
+
+/* avvio tickets pagina EVENTS + cambio di larghezza */
+
+if (contenitoreT && document.querySelector('#heroEvents')) {
+    // primo disegno al caricamento della pagina
+    mostraTickets(ticketEvents)
+
+    // quando la finestra attraversa i 992px ridisegno la lista
+    mqDesktop.addEventListener('change', () => {
+        mostraTickets(listaCorrente)
     })
 }

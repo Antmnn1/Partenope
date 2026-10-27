@@ -29,7 +29,26 @@
                         <li><a href="">profile</a></li>
                     </ul>
                 </div>
-                <p class="menuMobile d-none" style="color: red;">menu</p>
+                <!-- Il testo "menu" che apre il pannello -->
+                <p class="menuMobile d-lg-none" data-bs-toggle="offcanvas" data-bs-target="#menuFullscreen"
+                    aria-controls="menuFullscreen" role="button" tabindex="0" style="color: red;">menu</p>
+
+                <!-- Il pannello che esce da destra -->
+                <div class="offcanvas offcanvas-end offcanvas-fullscreen" tabindex="-1" id="menuFullscreen">
+                    <div class="offcanvas-body">
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                            aria-label="Chiudi"></button>
+                        <ul class="list-unstyled">
+                            <li><a href="../index.html">home</a></li>
+                            <li><a href="about.html">about</a></li>
+                            <li><a href="events.html">events</a></li>
+                            <li><a href="artists.html">artists</a></li>
+                            <li><a href="contact.html">contact</a></li>
+                            <li><a href="#">cart</a></li>
+                            <li><a href="#">profile</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </nav>
     </header>
