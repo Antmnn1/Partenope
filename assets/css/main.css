@@ -52,7 +52,7 @@ p {
 }
 
 footer {
-    background-color: #FF0000;
+    background-color: var(--rosso);
     color: var(--bianco);
     border: 2px solid var(--nero);
     font-size: 24px;
@@ -90,10 +90,6 @@ footer>div>div:nth-child(2) {
     line-height: 1;
     margin: 0;
     overflow: hidden;
-}
-
-.filtri span.attivo {
-    font-weight: bold;
 }
 
 .testoFocus {
@@ -156,6 +152,9 @@ footer>div>div:nth-child(2) {
 .button-about,
 #contenitoreTickets,
 .contenitoreTicketsSeeAlso,
+#mainArtisti>div,
+.cardGallery,
+.menuMobile,
 span:not(.titoloFiltro) {
     cursor: pointer;
 }
@@ -198,7 +197,9 @@ form p,
     width: fit-content;
 }
 
+
 /* hover e animazioni */
+
 button:not(.btn-close),
 #button-hero,
 .button-about,
@@ -207,7 +208,7 @@ button:not(.btn-close),
 }
 
 button:not(.btn-close, button.accordion-button):hover,
-#button-hero:hover{
+#button-hero:hover {
     background-color: #ee5c4f;
 }
 
@@ -227,7 +228,7 @@ button:not(.btn-close, button.accordion-button):hover,
 }
 
 .plusTicket>div:last-of-type:hover {
-    background-color: red;
+    background-color: var(--rosso);
 }
 
 .plusTicket>div:last-of-type:hover img {
@@ -263,19 +264,13 @@ button:not(.btn-close, button.accordion-button):hover,
     opacity: 1;
 }
 
-#mainArtisti>div{
-    cursor: pointer;
-}
-
-#mainArtisti>div:hover .fasciaCardArtisti{
+#mainArtisti>div:hover .fasciaCardArtisti {
     background-color: #ee5c4f;
 }
 
-.cardGallery:hover{
-    cursor: pointer;
-}
 
 /* testi tickets */
+
 .bodyTicket h3 {
     font-size: 56px;
     font-weight: 700;
@@ -407,7 +402,7 @@ footer li a {
 
 /* pagina home */
 
-/* hero */
+/* hero e bottoni sulle card about */
 
 #hero {
     background-image: url("../img/img-home.webp");
@@ -420,19 +415,14 @@ footer li a {
     left: 0;
     bottom: 0;
     width: 100%;
-    height: 80px;
-    padding: 20px 60px;
+    height: fit-content;
+    padding: 20px 40px;
     background-color: var(--rosso);
 }
 
-#cardAboutSx .button-about,
-#cardAboutDx .button-about {
-    padding: 20px 40px;
-}
-
 #button-hero {
+    padding: 20px 60px;
     border: var(--linea);
-    height: fit-content;
 }
 
 #button-hero p {
@@ -443,22 +433,22 @@ footer li a {
 }
 
 /* offcanvas */
-.menuMobile {
-    cursor: pointer;
-}
 
 .offcanvas-fullscreen {
     --bs-offcanvas-width: 100vw;
-
 }
 
 .offcanvas-body {
     padding: 60px 20px;
 }
 
-.offcanvas-fullscreen .btn-close {
+.offcanvas .btn-close {
+    background-image: url("../img/close.svg");
     filter: invert(13%) sepia(100%) saturate(7500%) hue-rotate(0deg) brightness(100%) contrast(110%);
     opacity: 1;
+    width: 40px;
+    height: 40px;
+    padding: 0;
 }
 
 .offcanvas-body ul {
@@ -475,16 +465,8 @@ footer li a {
 
 .offcanvas-body ul li a {
     text-decoration: none;
-    color: red;
+    color: var(--rosso);
     font-size: 48px;
-}
-
-.offcanvas .btn-close {
-    background-image: url("../img/close.svg");
-    opacity: 1;
-    width: 40px;
-    height: 40px;
-    padding: 0;
 }
 
 /* news */
@@ -550,12 +532,8 @@ footer li a {
     height: 100%;
 }
 
-.cardNews,
-.cardGallery {
-    height: 100%;
-}
-
 .cardNews {
+    height: 100%;
     font-size: clamp(16px, 2vw, 24px);
 }
 
@@ -565,15 +543,12 @@ footer li a {
     text-align: center;
     font-weight: 500;
     background-color: var(--rosso);
-    border: none;
     border-bottom: 2px solid var(--nero);
 }
 
 .contentNews {
     flex: 1;
     padding: 24px;
-    border: none;
-    border-bottom: none;
 }
 
 #primaSlideNews .wrapCardNews .titoloNews,
@@ -627,7 +602,6 @@ footer li a {
 #cardAboutSx .button-about,
 #cardAboutDx .button-about {
     border-top: var(--linea);
-    height: fit-content;
 }
 
 .button-about p {
@@ -661,7 +635,6 @@ footer li a {
 
 .Ticket {
     width: 68%;
-    border-left: var(--linea);
 }
 
 .plusTicket {
@@ -674,8 +647,6 @@ footer li a {
     background-color: var(--rosso);
     border-bottom: var(--linea);
 }
-
-
 
 .plusTicket>div:nth-child(2) {
     flex: 1;
@@ -728,10 +699,6 @@ footer li a {
     border-right: var(--linea);
 }
 
-.fasciaCardArtisti>div:first-of-type>p:first-of-type {
-    font-weight: bold !important;
-}
-
 .fasciaCardArtisti>div:first-of-type {
     gap: 8px;
 }
@@ -742,7 +709,7 @@ footer li a {
 }
 
 .fasciaCardArtisti>div:first-of-type>p:first-of-type {
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 #mainArtisti>div:nth-child(2)>.fasciaCardArtisti {
@@ -945,7 +912,8 @@ form button,
     border-bottom: var(--linea);
 }
 
-.titoloFiltro {
+.titoloFiltro,
+.filtri span.attivo {
     font-weight: bold;
 }
 
@@ -1163,9 +1131,11 @@ iframe {
     height: auto;
 }
 
+
 /* tickets mobile */
+
 .etichettaMobile {
-    background-color: #FF0000;
+    background-color: var(--rosso);
     color: var(--bianco);
     padding-block: 15px;
 }
@@ -1193,6 +1163,7 @@ iframe {
 .moreEshop>div:first-of-type {
     border-right: 2px solid var(--nero);
 }
+
 
 /* scheda artista */
 
@@ -1242,10 +1213,7 @@ iframe {
 
 /* media queries */
 
-/* sotto i 1400px */
-@media (max-width: 1399.98px) {}
-
-/* sotto i 1200px */
+/* sotto i 1258px */
 @media (max-width: 1257px) {
 
     /* home */
@@ -1326,7 +1294,6 @@ iframe {
     }
 
     /* footer */
-
     .social,
     .copy,
     .privacy {
@@ -1356,7 +1323,6 @@ iframe {
 
     .logo {
         padding: 8px;
-        background-color: var(--rosso);
     }
 
     #uno>div {
@@ -1369,11 +1335,10 @@ iframe {
     }
 
     #uno .bg-body:nth-of-type(2) {
-        padding: 60px 60px 60px 60px;
+        padding: 60px;
         width: 100%;
         border: var(--linea);
         border-top: none;
-        ;
     }
 
     #cardAboutSx {
@@ -1388,12 +1353,15 @@ iframe {
         border-left: none;
     }
 
-    .bordo {
+    .bordo,
+    .bordoDestra {
         height: 100%;
     }
 
-    .bordoDestra {
-        height: 100%;
+    /* animazioni */
+    #cardAboutSx .button-about,
+    #cardAboutDx .button-about {
+        opacity: 1;
     }
 
     /* artists */
@@ -1415,27 +1383,17 @@ iframe {
         border-right: none;
     }
 
-    #mainArtisti>div:nth-child(even) img,
-    #mainArtisti>div:nth-child(even) .fasciaCardArtisti,
-    #mainArtisti>div:nth-child(odd) img,
-    #mainArtisti>div:nth-child(odd) .fasciaCardArtisti {
+    #mainArtisti>div img,
+    #mainArtisti>div .fasciaCardArtisti {
         border-right: none !important;
     }
 
-    #mainArtisti>div:nth-child(1) {
-        border-top: none;
-    }
-
-    #mainArtisti>div:nth-child(2) {
+    #mainArtisti>div:nth-child(-n + 2) {
         border-top: none;
     }
 
     #contenitoreArtisti .contFiltri {
         padding: 60px 60px 30px 60px;
-    }
-
-    #contenitoreArtisti .filri {
-        gap: 8px;
     }
 
     #contenitoreArtisti .filtri span {
@@ -1457,7 +1415,11 @@ iframe {
         width: 100%;
     }
 
-    #zonaMappa,
+    #zonaMappa {
+        height: fit-content;
+        order: -1;
+    }
+
     #zonaMappa #mappa {
         height: fit-content;
     }
@@ -1481,17 +1443,6 @@ iframe {
     #zonaMappa>div:first-of-type {
         border-left: 2px solid var(--nero);
         border-right: 2px solid var(--nero);
-    }
-
-    #zonaMappa {
-        order: -1;
-    }
-
-    /* animazioni */
-    #cardAboutSx .button-about,
-    #cardAboutDx .button-about {
-        opacity: 1;
-        pointer-events: auto;
     }
 }
 
@@ -1523,6 +1474,11 @@ iframe {
         width: 100%;
     }
 
+    #due .contenitoreTitolo,
+    .contenitoreTitoloHeadingDue {
+        padding-block: 72px;
+    }
+
     .pSec {
         width: 100%;
         border-top: none;
@@ -1531,24 +1487,15 @@ iframe {
         border-left: 2px solid var(--nero);
     }
 
-    #due .contenitoreTitolo {
-        padding-top: 72px;
-        padding-bottom: 72px;
-    }
-
-    .contenitoreTitoloHeadingDue {
-        padding-top: 72px;
-        padding-bottom: 72px;
-    }
-
     #mainArtisti {
         gap: 40px;
     }
 
     #mainArtisti>div {
         width: 100%;
-        border-right: none;
-        border-left: none;
+        border-right: none !important;
+        border-bottom: none !important;
+        border-left: none !important;
     }
 
     #mainArtisti .fasciaCardArtisti {
@@ -1582,6 +1529,14 @@ iframe {
         margin-bottom: 30px;
     }
 
+    .swiper-slide {
+        width: 100%;
+    }
+
+    #button-hero p {
+        font-size: 40px !important;
+    }
+
     /* about */
     .contenitoreInfoAbout>div:nth-of-type(2) {
         padding-inline: 64px;
@@ -1603,28 +1558,10 @@ iframe {
         padding-block: 72px;
     }
 
-    .divisore {
-        height: 72px;
-    }
-
-    .swiper-slide {
-        width: 100%;
-    }
-
     #heroAbout>div,
     #heroEvents>div,
     #heroArtists>div {
         padding: 72px 60px;
-    }
-
-    #button-hero p {
-        font-size: 40px !important;
-    }
-
-    #mainArtisti>div {
-        border-right: none !important;
-        border-bottom: none !important;
-        border-left: none !important;
     }
 
     /* contact */
@@ -1633,12 +1570,9 @@ iframe {
     }
 
     /* scheda artisti */
-
     #schedaArtist .contFiltri {
-        margin: 0;
         padding-block: 24px;
         padding-left: 32px;
-        border-bottom: none;
     }
 
     .contImgArtist {
@@ -1684,7 +1618,6 @@ iframe {
     .logoFooter {
         padding: 20px 0;
     }
-
 }
 
 /* sotto i 576px (solo telefoni verticali) */
@@ -1701,12 +1634,7 @@ iframe {
 
     #cardAboutSx .button-about,
     #cardAboutDx .button-about {
-        padding: 20px 40px;
         height: auto;
-    }
-
-    #button-hero p {
-        font-size: 40px !important;
     }
 
     #uno .bg-body:nth-of-type(1) {
@@ -1719,7 +1647,8 @@ iframe {
     }
 
     #due .contenitoreTitolo,
-    .contenitoreTitoloHeadingDue {
+    .contenitoreTitoloHeadingDue,
+    #galleryPrecedenti .contenitoreTitolo {
         padding: 72px 16px;
     }
 
@@ -1728,11 +1657,14 @@ iframe {
     .bordoArtistiSx,
     .bordoArtistiDx,
     .bordoEventsSx,
-    .bordoEventsDx {
+    .bordoEventsDx,
+    .bordoSinistraScheda,
+    .bordoDestraScheda {
         width: 16px;
     }
 
-    #due .swiper {
+    #due .swiper,
+    #galleryPrecedenti .mySwiper {
         padding-left: 16px;
     }
 
@@ -1740,8 +1672,7 @@ iframe {
         padding-inline: 0;
     }
 
-    .button-about p,
-    #cardAboutDx .button-about p {
+    .button-about p {
         font-size: 24px !important;
     }
 
@@ -1755,7 +1686,7 @@ iframe {
     }
 
     .fasciaCardArtisti {
-        padding: 20px 20px;
+        padding: 20px;
     }
 
     #mainArtisti .fasciaCardArtisti p {
@@ -1771,18 +1702,8 @@ iframe {
         font-size: 24px;
     }
 
-    input[type="email"] {
-        padding-left: 16px;
-    }
-
     .logo {
         width: 180px;
-    }
-
-    .menuMobile {
-        top: 56px;
-        right: 16px;
-        font-size: 32px !important;
     }
 
     /* about */
@@ -1800,17 +1721,6 @@ iframe {
 
     .contenitoreInfoAbout>div:nth-of-type(2) {
         padding-inline: 16px;
-        padding-block: 24px;
-        border-left: none;
-        border-top: 2px solid var(--nero);
-    }
-
-    #galleryPrecedenti .contenitoreTitolo {
-        padding: 72px 16px;
-    }
-
-    #galleryPrecedenti .mySwiper {
-        padding-left: 16px;
     }
 
     /* artists */
@@ -1834,12 +1744,15 @@ iframe {
     }
 
     /* contact */
-
     input[type="email"],
     #zonaForm input[type="text"],
     textarea {
-        width: 100%;
         padding: 16px 20px;
+    }
+
+    input[type="text"],
+    textarea {
+        padding-left: 16px !important;
     }
 
     #heroContact h1 {
@@ -1848,7 +1761,7 @@ iframe {
 
     #zonaMappa p {
         padding: 24px 16px;
-        font-size: 16px
+        font-size: 16px;
     }
 
     iframe {
@@ -1859,11 +1772,6 @@ iframe {
         padding: 24px 16px;
     }
 
-    input[type="text"],
-    textarea {
-        padding-left: 16px !important;
-    }
-
     #zonaForm h2 {
         padding-bottom: 24px;
     }
@@ -1871,11 +1779,6 @@ iframe {
     /* scheda artista */
     #heroSchedaEvento>div {
         padding: 24px 16px;
-    }
-
-    .bordoSinistraScheda,
-    .bordoDestraScheda {
-        width: 16px;
     }
 
     .contImgArtist {
@@ -1902,7 +1805,6 @@ iframe {
     }
 
     .sfondoEvento .plusTicket {
-        position: absolute;
         bottom: 133.20px;
     }
 
@@ -1914,11 +1816,7 @@ iframe {
         margin: 0;
     }
 
-    .sfondoEvento .plusTicket {
-        width: 150px;
-        height: 150px;
-    }
-
+    /* footer */
     footer ul li {
         margin-right: 20px;
     }
@@ -1929,5 +1827,4 @@ iframe {
     .privacy {
         padding: 20px 16px;
     }
-
 }
