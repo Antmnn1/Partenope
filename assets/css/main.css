@@ -96,7 +96,7 @@ footer>div>div:nth-child(2) {
     font-weight: bold;
 }
 
-.testoFocus{
+.testoFocus {
     color: var(--rosso) !important;
 }
 
@@ -196,6 +196,32 @@ form p,
 #quattro p,
 #cinque p {
     width: fit-content;
+}
+
+/* hover e animazioni */
+button:not(.btn-close),
+#button-hero,
+.button-about,
+.fasciaCardArtisti {
+    transition: opacity 0.2s ease;
+}
+
+button:not(.btn-close):hover,
+#button-hero:hover,
+.button-about:hover,
+.fasciaCardArtisti:hover {
+    opacity: 0.8;
+}
+
+#cardAboutSx .button-about,
+#cardAboutDx .button-about {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+#cardAboutSx:hover .button-about,
+#cardAboutDx:hover .button-about {
+    opacity: 1;
 }
 
 /* testi tickets */
@@ -651,7 +677,7 @@ footer li a {
     border-right: var(--linea);
 }
 
-.fasciaCardArtisti>div:first-of-type>p:first-of-type{
+.fasciaCardArtisti>div:first-of-type>p:first-of-type {
     font-weight: bold !important;
 }
 
@@ -725,7 +751,7 @@ textarea {
     outline: none;
 }
 
-.accordion-item:not(.accordion-item:last-of-type){
+.accordion-item:not(.accordion-item:last-of-type) {
     border: none;
     border-bottom: 2px solid var(--nero);
 }
@@ -1408,6 +1434,13 @@ iframe {
 
     #zonaMappa {
         order: -1;
+    }
+
+    /* animazioni */
+    #cardAboutSx .button-about,
+    #cardAboutDx .button-about {
+        opacity: 1;
+        pointer-events: auto;
     }
 }
 
