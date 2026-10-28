@@ -203,14 +203,12 @@ button:not(.btn-close),
 #button-hero,
 .button-about,
 .fasciaCardArtisti {
-    transition: opacity 0.2s ease;
+    transition: all 0.2s ease;
 }
 
-button:not(.btn-close):hover,
-#button-hero:hover,
-.button-about:hover,
-.fasciaCardArtisti:hover {
-    opacity: 0.8;
+button:not(.btn-close, button.accordion-button):hover,
+#button-hero:hover{
+    background-color: #ee5c4f;
 }
 
 #cardAboutSx .button-about,
@@ -222,6 +220,59 @@ button:not(.btn-close):hover,
 #cardAboutSx:hover .button-about,
 #cardAboutDx:hover .button-about {
     opacity: 1;
+}
+
+.button-about:hover {
+    background-color: #ee5c4f !important;
+}
+
+.plusTicket>div:last-of-type:hover {
+    background-color: red;
+}
+
+.plusTicket>div:last-of-type:hover img {
+    filter: invert(1);
+}
+
+#contenitoreTickets,
+.contenitoreTicketsSeeAlso:not(.ticketMobile) {
+    position: relative;
+}
+
+#contenitoreTickets::after,
+.contenitoreTicketsSeeAlso:not(.ticketMobile)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 16%;
+    background-color: var(--rosso);
+    background-image: url("../img/arrow.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 64px auto;
+    opacity: 0;
+    border-right: 2px solid var(--nero);
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+#contenitoreTickets:has(.imgTicket:hover, .Ticket:hover)::after,
+.contenitoreTicketsSeeAlso:not(.ticketMobile):has(.imgTicket:hover, .Ticket:hover)::after {
+    opacity: 1;
+}
+
+#mainArtisti>div{
+    cursor: pointer;
+}
+
+#mainArtisti>div:hover .fasciaCardArtisti{
+    background-color: #ee5c4f;
+}
+
+.cardGallery:hover{
+    cursor: pointer;
 }
 
 /* testi tickets */

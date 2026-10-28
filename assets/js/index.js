@@ -386,3 +386,30 @@ if (contenitoreT && document.querySelector('#heroEvents')) {
         mostraTickets(listaCorrente)
     })
 }
+
+/* scroll morbido */
+const lenis = new Lenis()
+
+function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+requestAnimationFrame(raf)
+
+
+/* apparizione graduale */
+gsap.registerPlugin(ScrollTrigger)
+
+gsap.utils.toArray('h1, h2, p, img, li, span').forEach(el => {
+    if (el.closest('#button-hero')) return   
+
+    gsap.from(el, {
+        opacity: 0,
+        y: 40,
+        duration: 1,
+        scrollTrigger: {
+            trigger: el,
+            start: 'top 90%'
+        }
+    })
+})
